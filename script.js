@@ -1,0 +1,125 @@
+const currentPage = document.body.dataset.page || 'home';
+const links = [
+  ['index.html', 'Home', 'home'],
+  ['about.html', 'About Us', 'about'],
+  ['solutions.html', 'Solutions', 'solutions'],
+  ['categories.html', 'Categories', 'categories', true],
+  ['industries.html', 'Industries', 'industries'],
+  ['contact.html', 'Contact Us', 'contact']
+];
+
+const categoryLinks = [
+  ['category-textile-auxiliaries.html', 'Textile Auxiliaries'],
+  ['category-industrial-detergents.html', 'Industrial Detergents'],
+  ['category-cosmetics-personal-care.html', 'Cosmetics & Personal Care'],
+  ['category-ro-water-treatment.html', 'RO Water Treatment'],
+  ['category-sanitizers-disinfectants.html', 'Sanitizers & Disinfectants'],
+  ['category-raw-materials.html', 'Raw Materials']
+];
+
+const logoImg = `<img src="assets/logo/chematex-icon.png" alt="ChemaTex logo mark" class="brand-logo" />`;
+
+function renderHeader(){
+  const categoryDropdown = categoryLinks.map(([href,label]) => `<a href="${href}">${label}</a>`).join('');
+  const nav = links.map(([href,label,key,hasDropdown]) => {
+    if(hasDropdown){
+      return `<div class="nav-dropdown"><a href="${href}" class="${currentPage===key?'active':''}">${label} <span>⌄</span></a><div class="dropdown-menu">${categoryDropdown}</div></div>`;
+    }
+    return `<a href="${href}" class="${currentPage===key?'active':''}">${label}</a>`;
+  }).join('');
+  const mobile = links.map(([href,label,key,hasDropdown]) => {
+    if(hasDropdown){
+      return `<a href="${href}" class="${currentPage===key?'active':''}">${label}</a><div class="mobile-submenu">${categoryDropdown}</div>`;
+    }
+    return `<a href="${href}" class="${currentPage===key?'active':''}">${label}</a>`;
+  }).join('');
+  document.getElementById('site-header').innerHTML = `
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html" aria-label="ChemaTex home">${logoImg}<span>ChemaTex</span></a>
+        <nav class="nav-links" aria-label="Main navigation">${nav}</nav>
+        <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
+      </div>
+      <div class="mobile-menu">${mobile}</div>
+    </header>`;
+}
+
+function renderFooter(){
+  document.getElementById('site-footer').innerHTML = `
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" style="color:white;font-size:1.75rem;margin-bottom:14px">${logoImg}<span>ChemaTex</span></a>
+          <p>Specialized chemical solutions for textile processing, industrial cleaning, personal care, disinfection, RO water treatment, and raw material needs.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="about.html">About Us</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="categories.html">Categories</a>
+          <a href="industries.html">Industries</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div>
+          <h4>Categories</h4>
+          <a href="category-textile-auxiliaries.html">Textile Auxiliaries</a>
+          <a href="category-industrial-detergents.html">Industrial Detergents</a>
+          <a href="category-cosmetics-personal-care.html">Personal Care</a>
+          <a href="category-ro-water-treatment.html">RO Water Treatment</a>
+          <a href="category-sanitizers-disinfectants.html">Sanitizers</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+20222675966">+2 02 2267 5966</a>
+          <a href="tel:+201026622319">+2 0102 6622319</a>
+          <a href="mailto:chematex@chematex-eg.com">chematex@chematex-eg.com</a>
+          <p>Industrial Area, New Cairo 3, Cairo Governorate, Egypt</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 ChemaTex. All Rights Reserved.</span>
+        <span>Built as a custom-coded website.</span>
+      </div>
+    </div>
+  </footer>`;
+}
+
+function renderWhatsApp(){
+  const msg = encodeURIComponent('Hello ChemaTex, I would like to ask about your chemical solutions.');
+  document.getElementById('whatsapp').innerHTML = `<a class="whatsapp" aria-label="Contact ChemaTex on WhatsApp" href="https://wa.me/201026622319?text=${msg}" target="_blank" rel="noopener">✆</a>`;
+}
+
+function setupTabs(){
+  document.querySelectorAll('[data-tab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.tab;
+      document.querySelectorAll('[data-tab]').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(id)?.classList.add('active');
+    });
+  });
+}
+
+function setupForms(){
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const note = form.querySelector('.form-note');
+      if(note){
+        note.textContent = 'Thank you. This demo form is ready visually. Connect it to Formspree, Netlify Forms, EmailJS, or your backend to receive messages.';
+        note.style.color = '#365d63';
+        note.style.fontWeight = '800';
+      }
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderHeader();
+  renderFooter();
+  renderWhatsApp();
+  setupTabs();
+  setupForms();
+});
