@@ -1491,3 +1491,17 @@ img{max-width:100%;display:block}
   padding-top: 70px;
   padding-bottom: 70px;
 }
+
+/* About hero stats inside same section */
+.about-hero-combined {
+  padding-bottom: 90px;
+}
+
+.about-hero-stats {
+  margin-top: 80px;
+}
+
+.about-hero-stats .stat {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+}
