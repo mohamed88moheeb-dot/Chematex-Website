@@ -1,4 +1,4 @@
-# ChemaTex Website
+# Chematex Website
 
 A custom-coded static website built from the Durable AI website reference, redesigned for a more professional B2B chemical manufacturing/trading company feel.
 

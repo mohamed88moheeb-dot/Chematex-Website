@@ -17,7 +17,7 @@ const categoryLinks = [
   ['category-raw-materials.html', 'Raw Materials']
 ];
 
-const logoImg = `<img src="assets/logo/chematex-icon.png" alt="ChemaTex logo mark" class="brand-logo" />`;
+const logoImg = `<img src="assets/logo/Chematex-icon.png" alt="Chematex logo mark" class="brand-logo" />`;
 
 function renderHeader(){
   const categoryDropdown = categoryLinks.map(([href,label]) => `<a href="${href}">${label}</a>`).join('');
@@ -43,7 +43,7 @@ function renderHeader(){
   document.getElementById('site-header').innerHTML = `
     <header class="site-header">
       <div class="container navbar">
-        <a class="brand" href="index.html" aria-label="ChemaTex home">${logoImg}<span>ChemaTex</span></a>
+        <a class="brand" href="index.html" aria-label="Chematex home">${logoImg}<span>Chematex</span></a>
         <nav class="nav-links" aria-label="Main navigation">${nav}</nav>
         <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
       </div>
@@ -57,7 +57,7 @@ function renderFooter(){
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a class="brand" href="index.html" style="color:white;font-size:1.75rem;margin-bottom:14px">${logoImg}<span>ChemaTex</span></a>
+          <a class="brand" href="index.html" style="color:white;font-size:1.75rem;margin-bottom:14px">${logoImg}<span>Chematex</span></a>
           <p>Specialized chemical solutions for textile processing, industrial cleaning, personal care, disinfection, RO water treatment, and raw material needs.</p>
         </div>
         <div>
@@ -81,9 +81,9 @@ function renderFooter(){
           <a href="tel:+20222675966">+2 02 2267 5966</a>
           <a href="tel:+201026622319">+2 0102 6622319</a>
           <a href="tel:+201026622320">+2 0102 6622320</a>
-          <a href="mailto:chematex@chematex-eg.com">chematex@chematex-eg.com</a>
+          <a href="mailto:Chematex@Chematex-eg.com">Chematex@Chematex-eg.com</a>
           <a 
-            href="https://www.google.com/maps/search/?api=1&query=CHEMATEX%20COMPANY%20Textile%20Auxiliaries%20Detergents%20Cosmetics%20Factory" 
+            href="https://www.google.com/maps/search/?api=1&query=Chematex%20COMPANY%20Textile%20Auxiliaries%20Detergents%20Cosmetics%20Factory" 
             target="_blank" 
             rel="noopener">
             Industrial Area, New Cairo 3, Cairo Governorate 4716015, Egypt
@@ -91,15 +91,15 @@ function renderFooter(){
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2025 ChemaTex. All Rights Reserved.</span>
+        <span>© 2025 Chematex. All Rights Reserved.</span>
       </div>
     </div>
   </footer>`;
 }
 
 function renderWhatsApp(){
-  const msg = encodeURIComponent('Hello ChemaTex, I would like to ask about your chemical solutions.');
-  document.getElementById('whatsapp').innerHTML = `<a class="whatsapp" aria-label="Contact ChemaTex on WhatsApp" href="https://wa.me/201026622319?text=${msg}" target="_blank" rel="noopener">✆</a>`;
+  const msg = encodeURIComponent('Hello Chematex, I would like to ask about your chemical solutions.');
+  document.getElementById('whatsapp').innerHTML = `<a class="whatsapp" aria-label="Contact Chematex on WhatsApp" href="https://wa.me/201026622319?text=${msg}" target="_blank" rel="noopener">✆</a>`;
 }
 
 function setupTabs(){
