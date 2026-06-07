@@ -1485,3 +1485,10 @@ img{max-width:100%;display:block}
     animation-duration: 18s;
   }
 }
+
+/* Match About stats background with section above */
+.about-stats-section {
+  background: #f4f8f9;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
