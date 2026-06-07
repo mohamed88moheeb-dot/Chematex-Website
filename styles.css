@@ -1554,8 +1554,18 @@ img{max-width:100%;display:block}
   }
 }
 
-/* Logo carousel pause state */
-.logo-strip.paused,
-.logo-strip.paused * {
+/* Logo carousel pause/resume fix */
+.logo-carousel.paused .logo-track {
   animation-play-state: paused !important;
+}
+
+/* Prevent mobile sticky hover from keeping carousel paused forever */
+@media (hover: none) and (pointer: coarse) {
+  .logo-carousel:hover .logo-track {
+    animation-play-state: running !important;
+  }
+
+  .logo-carousel.paused .logo-track {
+    animation-play-state: paused !important;
+  }
 }
