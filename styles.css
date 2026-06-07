@@ -1553,3 +1553,8 @@ img{max-width:100%;display:block}
     line-height: 1.15 !important;
   }
 }
+/* Logo carousel pause/resume state */
+.logo-strip.paused,
+.logo-strip.paused * {
+  animation-play-state: paused !important;
+}
