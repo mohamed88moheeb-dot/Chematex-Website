@@ -302,3 +302,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+/* Logo carousel: pause on tap, resume after 2 seconds */
+document.addEventListener("DOMContentLoaded", function () {
+  const logoCarousel = document.querySelector(".logo-strip");
+
+  if (!logoCarousel) return;
+
+  let resumeTimer;
+
+  logoCarousel.addEventListener("click", function () {
+    logoCarousel.classList.add("paused");
+
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+      logoCarousel.classList.remove("paused");
+    }, 2000);
+  });
+});
