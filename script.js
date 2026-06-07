@@ -29,7 +29,14 @@ function renderHeader(){
   }).join('');
   const mobile = links.map(([href,label,key,hasDropdown]) => {
     if(hasDropdown){
-      return `<a href="${href}" class="${currentPage===key?'active':''}">${label}</a><div class="mobile-submenu">${categoryDropdown}</div>`;
+      return `
+        <button class="mobile-dropdown-toggle ${currentPage===key?'active':''}" type="button">
+          ${label} <span>⌄</span>
+        </button>
+        <div class="mobile-submenu mobile-submenu-collapsible">
+          ${categoryDropdown}
+        </div>
+      `;
     }
     return `<a href="${href}" class="${currentPage===key?'active':''}">${label}</a>`;
   }).join('');
