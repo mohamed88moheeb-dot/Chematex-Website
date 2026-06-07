@@ -910,3 +910,19 @@ img{max-width:100%;display:block}
 .category-card:hover .link-arrow {
   transform: translateX(6px);
 }
+
+/* Make contact location card clickable */
+.contact-card-link {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-card-link:hover {
+  transform: translateY(-4px);
+  border-color: var(--teal);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+}
+
+.contact-card-link:hover b {
+  color: var(--teal-dark);
+}
