@@ -144,10 +144,38 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const productsByCategory = {
     "Textile Auxiliaries": [
-      "Pretreatment",
-      "Dyeing",
-      "Printing",
-      "Finishing"
+      "Pretreatment Product 01",
+      "Pretreatment Product 02",
+      "Pretreatment Product 03",
+      "Pretreatment Product 04",
+      "Pretreatment Product 05",
+      "Pretreatment Product 06",
+      "Pretreatment Product 07",
+      "Pretreatment Product 08",
+      "Dyeing Product 01",
+      "Dyeing Product 02",
+      "Dyeing Product 03",
+      "Dyeing Product 04",
+      "Dyeing Product 05",
+      "Dyeing Product 06",
+      "Dyeing Product 07",
+      "Dyeing Product 08",
+      "Printing Product 01",
+      "Printing Product 02",
+      "Printing Product 03",
+      "Printing Product 04",
+      "Printing Product 05",
+      "Printing Product 06",
+      "Printing Product 07",
+      "Printing Product 08",
+      "Finishing Product 01",
+      "Finishing Product 02",
+      "Finishing Product 03",
+      "Finishing Product 04",
+      "Finishing Product 05",
+      "Finishing Product 06",
+      "Finishing Product 07",
+      "Finishing Product 08"
     ],
     "Industrial Detergents": [
       "All-in-One Sanitizer and Disinfectant - CHEMASURF 3 in 1",
@@ -222,5 +250,31 @@ document.addEventListener("DOMContentLoaded", function () {
         productSelect.appendChild(option);
       });
     });
+  }
+});
+
+
+/* Auto-select quote product and category from product pages */
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const productParam = params.get("product");
+  const categoryParam = params.get("category");
+  const categorySelect = document.getElementById("quoteCategory");
+  const productSelect = document.getElementById("quoteProduct");
+
+  if (categorySelect && productSelect && categoryParam) {
+    categorySelect.value = categoryParam;
+    categorySelect.dispatchEvent(new Event("change"));
+
+    if (productParam) {
+      setTimeout(function () {
+        const matchingOption = Array.from(productSelect.options).find(function (option) {
+          return option.value === productParam || option.textContent === productParam;
+        });
+        if (matchingOption) {
+          productSelect.value = matchingOption.value;
+        }
+      }, 50);
+    }
   }
 });
