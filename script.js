@@ -128,14 +128,26 @@ function setupForms(){
   });
 }
 
+function setupMobileDropdown(){
+  const toggle = document.querySelector('.mobile-dropdown-toggle');
+  const submenu = document.querySelector('.mobile-submenu-collapsible');
+
+  if(toggle && submenu){
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      submenu.classList.toggle('open');
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderHeader();
+  setupMobileDropdown();
   renderFooter();
   renderWhatsApp();
   setupTabs();
   setupForms();
 });
-
 
 /* Floating LinkedIn button */
 document.addEventListener("DOMContentLoaded", function () {
