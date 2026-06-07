@@ -123,3 +123,19 @@ document.addEventListener('DOMContentLoaded', () => {
   setupTabs();
   setupForms();
 });
+
+
+/* Floating LinkedIn button */
+document.addEventListener("DOMContentLoaded", function () {
+  const linkedinButton = document.createElement("a");
+
+  linkedinButton.className = "linkedin-float";
+  linkedinButton.href = "PASTE_YOUR_LINKEDIN_LINK_HERE";
+  linkedinButton.target = "_blank";
+  linkedinButton.rel = "noopener";
+  linkedinButton.setAttribute("aria-label", "Open LinkedIn");
+
+  linkedinButton.innerHTML = "in";
+
+  document.body.appendChild(linkedinButton);
+});
