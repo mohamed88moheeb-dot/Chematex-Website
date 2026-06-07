@@ -234,3 +234,30 @@ img{max-width:100%;display:block}
   color: var(--muted);
   margin-bottom: 18px;
 }
+
+
+/* Floating LinkedIn button */
+.linkedin-float {
+  position: fixed;
+  right: 22px;
+  bottom: 88px;
+  z-index: 80;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #0a66c2;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 24px rgba(0,0,0,.22);
+  font-size: 1.45rem;
+  font-weight: 900;
+  font-family: Arial, sans-serif;
+  border: 3px solid white;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.linkedin-float:hover {
+  transform: translateY(-2px);
+}
