@@ -1148,3 +1148,110 @@ img{max-width:100%;display:block}
     padding: 22px !important;
   }
 }
+
+/* =========================
+   Upgraded Industry Cards
+   ========================= */
+
+.industry-card,
+.card.industry-card {
+  position: relative;
+  overflow: hidden;
+  padding: 34px;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,251,251,0.96));
+  border: 1px solid rgba(71, 111, 117, 0.18);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.055);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.industry-card::before,
+.card.industry-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 34px;
+  right: 34px;
+  height: 4px;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(90deg, var(--teal), var(--yellow), var(--orange));
+}
+
+.industry-card::after,
+.card.industry-card::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  right: -60px;
+  top: -60px;
+  border-radius: 50%;
+  background: rgba(71, 111, 117, 0.07);
+  pointer-events: none;
+}
+
+.industry-card:hover,
+.card.industry-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(71, 111, 117, 0.34);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.11);
+}
+
+.industry-card h3,
+.card.industry-card h3 {
+  position: relative;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  color: var(--navy);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.industry-card h3::after,
+.card.industry-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 72px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), rgba(71,111,117,0.08));
+}
+
+.industry-card p,
+.card.industry-card p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.industry-card .tags,
+.card.industry-card .tags {
+  margin-top: auto;
+}
+
+.industry-card .tag,
+.card.industry-card .tag {
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+  border: 1px solid rgba(71, 111, 117, 0.12);
+  padding: 8px 12px;
+  font-weight: 850;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.industry-card:hover .tag,
+.card.industry-card:hover .tag {
+  background: rgba(71, 111, 117, 0.14);
+}
+
+.industry-card .tag:hover,
+.card.industry-card .tag:hover {
+  transform: translateY(-2px);
+  background: var(--teal-dark);
+  color: #ffffff;
+}
