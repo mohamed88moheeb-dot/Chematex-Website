@@ -73,8 +73,14 @@ function renderFooter(){
           <h4>Contact</h4>
           <a href="tel:+20222675966">+2 02 2267 5966</a>
           <a href="tel:+201026622319">+2 0102 6622319</a>
+          <a href="tel:+201026622320">+2 0102 6622320</a>
           <a href="mailto:chematex@chematex-eg.com">chematex@chematex-eg.com</a>
-          <p>Industrial Area, New Cairo 3, Cairo Governorate, Egypt</p>
+          <a 
+            href="https://www.google.com/maps/search/?api=1&query=CHEMATEX%20COMPANY%20Textile%20Auxiliaries%20Detergents%20Cosmetics%20Factory" 
+            target="_blank" 
+            rel="noopener">
+            Industrial Area, New Cairo 3, Cairo Governorate 4716015, Egypt
+          </a>
         </div>
       </div>
       <div class="footer-bottom">
