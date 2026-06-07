@@ -139,3 +139,88 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.body.appendChild(linkedinButton);
 });
+
+/* Quote form dynamic product dropdown + quantity options */
+document.addEventListener("DOMContentLoaded", function () {
+  const productsByCategory = {
+    "Textile Auxiliaries": [
+      "Pretreatment",
+      "Dyeing",
+      "Printing",
+      "Finishing"
+    ],
+    "Industrial Detergents": [
+      "All-in-One Sanitizer and Disinfectant - CHEMASURF 3 in 1",
+      "Multi-Surface Glass Cleaner - CHEMASPARK G",
+      "Lime Scale Remover - CHEMARUST"
+    ],
+    "Cosmetics & Personal Care": [
+      "Mild hand-wash for frequent use - CHEMACARE",
+      "Foaming antibacterial hand wash - PROCARE",
+      "Shower gel with Argan oil - CHEMALINE (Argan)"
+    ],
+    "RO Water Treatment": [
+      "RO 1",
+      "RO 2",
+      "RO 3"
+    ],
+    "Sanitizers & Disinfectants": [
+      "Alcohol Gel Hand Sanitizer - Chemol",
+      "Alcohol Rub for Hand Disinfection - CHEMASINZE (70)",
+      "Sanitizer for all Fabrics - CHEMA SANITIZER",
+      "Cleanser, Disinfectant, and Antiseptic - CHEMATOL"
+    ],
+    "Raw Materials": [
+      "RM 1",
+      "RM 2",
+      "RM 3",
+      "RM 4",
+      "RM 5",
+      "RM 6",
+      "RM 7",
+      "RM 8"
+    ]
+  };
+
+  const categorySelect = document.getElementById("quoteCategory");
+  const productSelect = document.getElementById("quoteProduct");
+  const quantitySelect = document.getElementById("quoteQuantity");
+
+  if (quantitySelect) {
+    for (let i = 1; i <= 100; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      quantitySelect.appendChild(option);
+    }
+  }
+
+  if (categorySelect && productSelect) {
+    categorySelect.addEventListener("change", function () {
+      const selectedCategory = categorySelect.value;
+      const products = productsByCategory[selectedCategory] || [];
+
+      productSelect.innerHTML = "";
+
+      if (!selectedCategory) {
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "Select a category first";
+        productSelect.appendChild(defaultOption);
+        return;
+      }
+
+      const placeholderOption = document.createElement("option");
+      placeholderOption.value = "";
+      placeholderOption.textContent = "Select Product";
+      productSelect.appendChild(placeholderOption);
+
+      products.forEach(function (product) {
+        const option = document.createElement("option");
+        option.value = product;
+        option.textContent = product;
+        productSelect.appendChild(option);
+      });
+    });
+  }
+});
