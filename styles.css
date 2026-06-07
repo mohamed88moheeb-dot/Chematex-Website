@@ -261,3 +261,544 @@ img{max-width:100%;display:block}
 .linkedin-float:hover {
   transform: translateY(-2px);
 }
+
+/* =========================
+   Full Mobile Optimization
+   ========================= */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  section,
+  main,
+  header,
+  footer {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  .section-sm {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .page-hero {
+    padding-top: 64px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.11em;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 1.95rem !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.04em;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .section-copy {
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+    margin-top: 14px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .center {
+    text-align: left;
+  }
+
+  .center .section-copy {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Header */
+  .navbar {
+    height: 72px !important;
+  }
+
+  .brand {
+    font-size: 1.35rem !important;
+    gap: 8px !important;
+    letter-spacing: -0.035em;
+  }
+
+  .brand-logo {
+    width: 52px !important;
+    height: 44px !important;
+  }
+
+  .brand svg {
+    width: 52px !important;
+    height: 44px !important;
+  }
+
+  .menu-btn {
+    width: 42px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+  }
+
+  .mobile-menu {
+    padding: 12px 24px 18px !important;
+  }
+
+  .mobile-menu a {
+    padding: 11px 0 !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: auto !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+    padding: 48px 0 !important;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.055em;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .hero p {
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+    margin: 18px 0 24px !important;
+    max-width: 100%;
+  }
+
+  .hero-badges {
+    gap: 8px !important;
+    margin-top: 22px !important;
+  }
+
+  .badge {
+    font-size: 0.78rem !important;
+    padding: 7px 10px !important;
+  }
+
+  .lab-card {
+    height: 280px !important;
+    border-radius: 24px !important;
+  }
+
+  .lab-equipment {
+    gap: 10px !important;
+    padding: 22px !important;
+  }
+
+  .beaker {
+    transform: scale(0.72) !important;
+  }
+
+  .floating-card {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin-top: 16px !important;
+    max-width: 100% !important;
+  }
+
+  /* Layout grids */
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .form-grid,
+  .stat-strip,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid {
+    gap: 22px !important;
+  }
+
+  .split,
+  .contact-grid,
+  .product-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+  }
+
+  /* Cards */
+  .card,
+  .product-card,
+  .product-card.final-product-card,
+  .category-card,
+  .contact-card,
+  .form-card,
+  .teal-card,
+  .stat,
+  .map-link-card {
+    width: 100% !important;
+    padding: 24px !important;
+    border-radius: 22px !important;
+  }
+
+  .card h3,
+  .product-card h3,
+  .product-card.final-product-card h3,
+  .category-card h3 {
+    font-size: 1.35rem !important;
+    line-height: 1.2 !important;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .card p,
+  .product-card p,
+  .product-card.final-product-card p,
+  .category-card p {
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word;
+  }
+
+  .card:hover,
+  .product-card:hover,
+  .category-card:hover {
+    transform: none !important;
+  }
+
+  /* Category cards */
+  .category-card {
+    min-height: 240px !important;
+    justify-content: flex-end !important;
+  }
+
+  .category-card h3 {
+    font-size: 1.45rem !important;
+  }
+
+  .category-card p {
+    margin-top: 8px !important;
+  }
+
+  .category-card .link-arrow,
+  .product-card .link-arrow,
+  .product-card.final-product-card .link-arrow {
+    margin-top: 20px !important;
+  }
+
+  /* Product cards */
+  .product-card,
+  .product-card.final-product-card {
+    min-height: auto !important;
+  }
+
+  .product-card.final-product-card h3,
+  .product-card h3 {
+    margin-bottom: 14px !important;
+  }
+
+  .product-card.final-product-card p,
+  .product-card p {
+    margin-bottom: 0 !important;
+  }
+
+  /* Product landing pages */
+  .product-detail-hero {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  .breadcrumb {
+    font-size: 0.9rem !important;
+    margin-bottom: 16px !important;
+  }
+
+  .product-meta-card,
+  .packaging-card {
+    padding: 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .product-meta-card strong {
+    font-size: 1.2rem !important;
+  }
+
+  .packaging-card div {
+    gap: 8px !important;
+  }
+
+  .packaging-card strong {
+    padding: 8px 14px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .product-doc-buttons {
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .product-doc-buttons .btn {
+    width: 100% !important;
+  }
+
+  .product-visual {
+    min-height: 260px !important;
+    border-radius: 24px !important;
+  }
+
+  .doc-stack {
+    gap: 12px !important;
+  }
+
+  .doc-card {
+    width: 112px !important;
+    height: 150px !important;
+    font-size: 1.4rem !important;
+    border-radius: 14px !important;
+  }
+
+  /* Buttons */
+  .btn-row {
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 18px !important;
+    border-radius: 999px !important;
+    font-size: 0.92rem !important;
+  }
+
+  /* Forms */
+  .form-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .field {
+    gap: 7px !important;
+  }
+
+  .field label {
+    font-size: 0.9rem !important;
+  }
+
+  .field input,
+  .field textarea,
+  .field select {
+    width: 100% !important;
+    font-size: 1rem !important;
+    padding: 15px 15px !important;
+    border-radius: 14px !important;
+  }
+
+  .field textarea {
+    min-height: 130px !important;
+  }
+
+  /* Contact section */
+  .contact-info {
+    gap: 16px !important;
+  }
+
+  .contact-card {
+    gap: 14px !important;
+    align-items: flex-start !important;
+  }
+
+  .contact-card .icon {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .contact-card b {
+    font-size: 1rem !important;
+  }
+
+  .contact-card a,
+  .contact-card span {
+    font-size: 0.92rem !important;
+    word-break: break-word;
+  }
+
+  /* Image / visual panels */
+  .image-panel,
+  .product-visual,
+  .lab-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .image-panel {
+    min-height: 300px !important;
+    border-radius: 24px !important;
+  }
+
+  .image-panel::after {
+    right: 34px !important;
+    top: 60px !important;
+    transform: scale(0.8);
+    transform-origin: top right;
+  }
+
+  /* Stats */
+  .stat strong {
+    font-size: 1.65rem !important;
+  }
+
+  .stat span {
+    font-size: 0.9rem !important;
+  }
+
+  /* CTA sections */
+  .cta {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 30px 24px !important;
+    border-radius: 26px !important;
+    gap: 20px !important;
+  }
+
+  .cta h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .cta p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Map */
+  .map-embed {
+    height: 320px !important;
+    border-radius: 24px !important;
+  }
+
+  .map-link-card {
+    padding: 24px !important;
+    border-radius: 22px !important;
+  }
+
+  .map-link-card h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .map-link-card p {
+    font-size: 0.95rem !important;
+  }
+
+  /* Footer */
+  .footer {
+    padding-top: 52px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .footer h4 {
+    margin-bottom: 12px !important;
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 0.93rem !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 8px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Floating buttons */
+  .whatsapp,
+  .linkedin-float {
+    right: 18px !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .whatsapp {
+    bottom: 16px !important;
+    font-size: 1.45rem !important;
+  }
+
+  .linkedin-float {
+    bottom: 78px !important;
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+  .container {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .section-title {
+    font-size: 1.78rem !important;
+  }
+
+  .hero h1 {
+    font-size: 2.05rem !important;
+  }
+
+  .card,
+  .product-card,
+  .product-card.final-product-card,
+  .category-card,
+  .contact-card,
+  .form-card,
+  .teal-card,
+  .stat,
+  .map-link-card {
+    padding: 22px !important;
+  }
+
+  .category-card {
+    min-height: 220px !important;
+  }
+
+  .product-visual,
+  .lab-card {
+    min-height: 240px !important;
+  }
+
+  .doc-card {
+    width: 100px !important;
+    height: 135px !important;
+  }
+}
