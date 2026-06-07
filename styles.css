@@ -926,3 +926,33 @@ img{max-width:100%;display:block}
 .contact-card-link:hover b {
   color: var(--teal-dark);
 }
+
+/* Textile Auxiliaries subcategory spacing */
+.textile-subcategory-block {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  border-bottom: 1px solid var(--border);
+}
+
+.textile-subcategory-block:first-child {
+  padding-top: 20px;
+}
+
+.textile-subcategory-block:last-child {
+  padding-bottom: 20px;
+  border-bottom: none;
+}
+
+.textile-subcategory-title {
+  margin-bottom: 16px;
+}
+
+/* Adds better space between the description and product cards */
+.textile-subcategory-block .section-copy {
+  margin-bottom: 36px;
+}
+
+/* Optional: make the product grid breathe more */
+.textile-subcategory-block .grid {
+  gap: 28px;
+}
