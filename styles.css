@@ -992,3 +992,24 @@ img{max-width:100%;display:block}
   color: var(--muted);
   opacity: 0.65;
 }
+
+/* Keep phone numbers on one line */
+.phone-links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  white-space: nowrap;
+}
+
+.phone-link {
+  font-size: 0.95rem;
+  padding: 4px 6px;
+  margin-left: 0;
+}
+
+.phone-separator {
+  font-size: 0.95rem;
+  opacity: 0.55;
+}
