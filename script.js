@@ -79,7 +79,6 @@ function renderFooter(){
       </div>
       <div class="footer-bottom">
         <span>© 2025 ChemaTex. All Rights Reserved.</span>
-        <span>Built as a custom-coded website.</span>
       </div>
     </div>
   </footer>`;
