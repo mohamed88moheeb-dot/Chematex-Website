@@ -1554,17 +1554,3 @@ img{max-width:100%;display:block}
   }
 }
 
-/* On mobile, do not let tap/hover permanently pause the logo carousel */
-@media (hover: none) and (pointer: coarse) {
-  .logo-strip:hover,
-  .logo-strip:hover *,
-  .client-logo:hover,
-  .client-logo:hover * {
-    animation-play-state: running !important;
-  }
-
-  .logo-strip.paused,
-  .logo-strip.paused * {
-    animation-play-state: paused !important;
-  }
-}
