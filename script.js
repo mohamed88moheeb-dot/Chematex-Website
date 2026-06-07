@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const linkedinButton = document.createElement("a");
 
   linkedinButton.className = "linkedin-float";
-  linkedinButton.href = "https://www.linkedin.com/in/mohamed-darweesh-60ba28305/";
+  linkedinButton.href = "PASTE_YOUR_LINKEDIN_LINK_HERE";
   linkedinButton.target = "_blank";
   linkedinButton.rel = "noopener";
   linkedinButton.setAttribute("aria-label", "Open LinkedIn");
