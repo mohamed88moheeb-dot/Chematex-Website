@@ -304,3 +304,29 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+/* Logo carousel: pause when tapped, resume when tapping outside */
+document.addEventListener("DOMContentLoaded", function () {
+  const logoCarousel = document.querySelector(".logo-strip");
+
+  if (!logoCarousel) return;
+
+  logoCarousel.addEventListener("click", function (event) {
+    event.stopPropagation();
+    logoCarousel.classList.add("paused");
+  });
+
+  logoCarousel.addEventListener("touchstart", function (event) {
+    event.stopPropagation();
+    logoCarousel.classList.add("paused");
+  }, { passive: true });
+
+  document.addEventListener("click", function () {
+    logoCarousel.classList.remove("paused");
+  });
+
+  document.addEventListener("touchstart", function (event) {
+    if (!logoCarousel.contains(event.target)) {
+      logoCarousel.classList.remove("paused");
+    }
+  }, { passive: true });
+});
