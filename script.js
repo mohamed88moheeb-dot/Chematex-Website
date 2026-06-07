@@ -17,7 +17,7 @@ const categoryLinks = [
   ['category-raw-materials.html', 'Raw Materials']
 ];
 
-const logoImg = `<img src="assets/logo/Chematex-icon.png" alt="Chematex logo mark" class="brand-logo" />`;
+const logoImg = `<img src="assets/logo/chematex-icon.png" alt="Chematex logo mark" class="brand-logo" />`;
 
 function renderHeader(){
   const categoryDropdown = categoryLinks.map(([href,label]) => `<a href="${href}">${label}</a>`).join('');
