@@ -1,6 +1,243 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Contact Us | ChemaTex</title><meta name="description" content="Contact ChemaTex to request product information, technical support, samples, or quotations."/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"/></head><body data-page="contact"><div id="site-header"></div><main>
-<section class="page-hero"><div class="container"><div class="eyebrow">Contact</div><h1 class="section-title">Contact ChemaTex</h1><p class="section-copy">Get in touch to request product information, technical support, samples, or a tailored quotation for your business.</p></div></section>
-<section class="section"><div class="container contact-grid"><div><div class="eyebrow">Company information</div><h2 class="section-title">Let’s Discuss Your Chemical Requirements</h2><p class="section-copy">Reach out to our team and we will direct your inquiry to the relevant product or supply support.</p><div class="contact-info" style="margin-top:28px"><div class="contact-card"><div class="icon">☎</div><div><b>Call Us</b><a href="tel:+20222675966">+2 02 2267 5966</a><a href="tel:+201026622319">+2 0102 6622319 / +2 01026622320</a></div></div><div class="contact-card"><div class="icon">@</div><div><b>Email Us</b><a href="mailto:chematex@chematex-eg.com">chematex@chematex-eg.com</a></div></div><div class="contact-card"><div class="icon">⌖</div><div><b>Visit Us</b><span>Industrial Area, New Cairo 3, Cairo Governorate 4716015, Egypt</span></div></div><div class="contact-card"><div class="icon">◷</div><div><b>Working Hours</b><span>Sunday to Thursday: 08:00 AM – 05:00 PM</span><span>Friday: Closed</span><span>Saturday: 08:00 AM – 05:00 PM</span></div></div></div></div><div class="form-card"><h2 style="color:var(--navy);margin-bottom:18px">Send an Inquiry</h2><form><div class="form-grid"><div class="field"><label>Name</label><input required type="text" placeholder="Your name"></div><div class="field"><label>Email</label><input required type="email" placeholder="name@company.com"></div><div class="field"><label>Phone</label><input type="tel" placeholder="Phone number"></div><div class="field"><label>Company Name</label><input type="text" placeholder="Company name"></div><div class="field"><label>Company Field</label><input type="text" placeholder="Industry / field"></div><div class="field"><label>Inquiry Type</label><select><option>General Inquiry</option><option>Request a Quote</option><option>Request a Sample</option><option>Product Information</option><option>Technical Support</option></select></div><div class="field full"><label>Message</label><textarea required placeholder="Tell us what you need..."></textarea></div></div><button class="btn btn-primary" style="margin-top:20px" type="submit">Send Inquiry</button><p class="form-note">Demo form: connect to Formspree, Netlify Forms, EmailJS, or a backend later.</p></form></div></div></section>
-<section class="section bg-soft"><div class="container"><div class="center narrow container"><div class="eyebrow">Samples & quotations</div><h2 class="section-title">Need a Sample or Quotation?</h2><p class="section-copy">Share your requirements and our team will get back to you with relevant product information, sample availability, or quotation details.</p></div><div class="form-card" style="max-width:900px;margin:36px auto 0"><form><div class="form-grid"><div class="field"><label>Name</label><input required type="text"></div><div class="field"><label>Job Title</label><input type="text"></div><div class="field"><label>Company Name</label><input type="text"></div><div class="field"><label>Company Field</label><input type="text"></div><div class="field"><label>Mobile Number</label><input type="tel"></div><div class="field"><label>WhatsApp Number</label><input type="tel"></div><div class="field"><label>Email</label><input required type="email"></div><div class="field"><label>Product Category</label><select><option>Textile Auxiliaries</option><option>Industrial Detergents</option><option>Cosmetics & Personal Care</option><option>RO Water Treatment</option><option>Sanitizers & Disinfectants</option><option>Raw Materials</option><option>Other</option></select></div><div class="field full"><label>Company Address</label><input type="text"></div><div class="field full"><label>Message</label><textarea placeholder="Product, quantity, application, or specific requirement"></textarea></div></div><button class="btn btn-primary" style="margin-top:20px" type="submit">Send Request</button><p class="form-note">Demo form: connect to a form backend later.</p></form></div></div></section>
-<section class="section"><div class="container"><div class="map-placeholder"><div class="map-pin"></div><div class="map-card"><h2 style="color:var(--navy);margin-bottom:12px">Location</h2><p>Industrial Area, New Cairo 3, Cairo Governorate 4716015, Egypt</p><p class="muted" style="margin-top:10px">Replace this placeholder with a real Google Maps or Mapbox embed.</p></div></div></div></section>
-</main><div id="site-footer"></div><div id="whatsapp"></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | ChemaTex</title>
+  <meta name="description" content="Contact ChemaTex to request product information, technical support, samples, or quotations."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Contact</div>
+        <h1 class="section-title">Contact ChemaTex</h1>
+        <p class="section-copy">Get in touch to request product information, technical support, samples, or a tailored quotation for your business.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow">Company information</div>
+          <h2 class="section-title">Let’s Discuss Your Chemical Requirements</h2>
+          <p class="section-copy">Reach out to our team and we will direct your inquiry to the relevant product or supply support.</p>
+
+          <div class="contact-info" style="margin-top:28px">
+            <div class="contact-card">
+              <div class="icon">☎</div>
+              <div>
+                <b>Call Us</b>
+                <a href="tel:+20222675966">+2 02 2267 5966</a>
+                <a href="tel:+201026622319">+2 0102 6622319 / +2 01026622320</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="icon">@</div>
+              <div>
+                <b>Email Us</b>
+                <a href="mailto:chematex@chematex-eg.com">chematex@chematex-eg.com</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="icon">⌖</div>
+              <div>
+                <b>Visit Us</b>
+                <span>Industrial Area, New Cairo 3, Cairo Governorate 4716015, Egypt</span>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="icon">◷</div>
+              <div>
+                <b>Working Hours</b>
+                <span>Sunday to Thursday: 08:00 AM – 05:00 PM</span>
+                <span>Friday: Closed</span>
+                <span>Saturday: 08:00 AM – 05:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 style="color:var(--navy);margin-bottom:18px">Send an Inquiry</h2>
+
+          <form>
+            <div class="form-grid">
+              <div class="field">
+                <label>Name</label>
+                <input required type="text" placeholder="Your name">
+              </div>
+
+              <div class="field">
+                <label>Email</label>
+                <input required type="email" placeholder="name@company.com">
+              </div>
+
+              <div class="field">
+                <label>Phone</label>
+                <input type="tel" placeholder="Phone number">
+              </div>
+
+              <div class="field">
+                <label>Company Name</label>
+                <input type="text" placeholder="Company name">
+              </div>
+
+              <div class="field">
+                <label>Company Field</label>
+                <input type="text" placeholder="Industry / field">
+              </div>
+
+              <div class="field">
+                <label>Inquiry Type</label>
+                <select>
+                  <option>General Inquiry</option>
+                  <option>Request a Quote</option>
+                  <option>Request a Sample</option>
+                  <option>Product Information</option>
+                  <option>Technical Support</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label>Message</label>
+                <textarea required placeholder="Tell us what you need..."></textarea>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top:20px" type="submit">Send Inquiry</button>
+            <p class="form-note">Demo form: connect to Formspree, Netlify Forms, EmailJS, or a backend later.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-soft" id="quote">
+      <div class="container">
+        <div class="center narrow container">
+          <div class="eyebrow">Samples & quotations</div>
+          <h2 class="section-title">Need a Sample or Quotation?</h2>
+          <p class="section-copy">Share your requirements and our team will get back to you with relevant product information, sample availability, or quotation details.</p>
+        </div>
+
+        <div class="form-card" style="max-width:900px;margin:36px auto 0">
+          <form>
+            <div class="form-grid">
+              <div class="field">
+                <label>Name</label>
+                <input required type="text">
+              </div>
+
+              <div class="field">
+                <label>Job Title</label>
+                <input type="text">
+              </div>
+
+              <div class="field">
+                <label>Company Name</label>
+                <input type="text">
+              </div>
+
+              <div class="field">
+                <label>Company Field</label>
+                <input type="text">
+              </div>
+
+              <div class="field">
+                <label>Mobile Number</label>
+                <input type="tel">
+              </div>
+
+              <div class="field">
+                <label>WhatsApp Number</label>
+                <input type="tel">
+              </div>
+
+              <div class="field">
+                <label>Email</label>
+                <input required type="email">
+              </div>
+
+              <div class="field">
+                <label>Product Category</label>
+                <select>
+                  <option>Textile Auxiliaries</option>
+                  <option>Industrial Detergents</option>
+                  <option>Cosmetics & Personal Care</option>
+                  <option>RO Water Treatment</option>
+                  <option>Sanitizers & Disinfectants</option>
+                  <option>Raw Materials</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label>Company Address</label>
+                <input type="text">
+              </div>
+
+              <div class="field full">
+                <label>Message</label>
+                <textarea name="message" placeholder="Product, quantity, application, or specific requirement"></textarea>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top:20px" type="submit">Send Request</button>
+            <p class="form-note">Demo form: connect to a form backend later.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="center narrow container">
+          <div class="eyebrow">Location</div>
+          <h2 class="section-title">Find Us on Google Maps</h2>
+          <p class="section-copy">Visit ChemaTex or open the location directly in Google Maps for directions.</p>
+        </div>
+
+        <div style="margin-top:34px">
+          <div class="map-embed">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.4139813971838!2d31.482470699999993!3d29.9675305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14582482885f8afb%3A0xd1301d70b02da9de!2sCHEMATEX%20COMPANY%20Textile%20Auxiliaries%20%2C%20Detergents%20%26%20cosmetics%20Factory!5e0!3m2!1sen!2seg!4v1780792762564!5m2!1sen!2seg" 
+              width="100%" 
+              height="420" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="map-link-card">
+            <h3>Visit ChemaTex</h3>
+            <p>CHEMATEX COMPANY Textile Auxiliaries, Detergents & Cosmetics Factory</p>
+            <a 
+              class="btn btn-primary" 
+              href="https://www.google.com/maps/search/?api=1&query=CHEMATEX%20COMPANY%20Textile%20Auxiliaries%20Detergents%20Cosmetics%20Factory" 
+              target="_blank" 
+              rel="noopener">
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="whatsapp"></div>
+  <script src="script.js"></script>
+</body>
+</html>
