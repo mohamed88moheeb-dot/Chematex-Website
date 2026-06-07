@@ -1255,3 +1255,42 @@ img{max-width:100%;display:block}
   background: var(--teal-dark);
   color: #ffffff;
 }
+
+/* Mobile collapsible Categories menu */
+.mobile-dropdown-toggle {
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+  border: 0;
+  border-bottom: 1px solid #eef2f4;
+  background: transparent;
+  color: var(--navy);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+}
+
+.mobile-dropdown-toggle span {
+  transition: transform 0.25s ease;
+}
+
+.mobile-dropdown-toggle.open span {
+  transform: rotate(180deg);
+}
+
+.mobile-submenu-collapsible {
+  display: none;
+}
+
+.mobile-submenu-collapsible.open {
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .mobile-dropdown-toggle {
+    display: flex;
+  }
+}
