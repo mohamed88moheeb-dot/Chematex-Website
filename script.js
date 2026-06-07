@@ -303,28 +303,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/* Logo carousel: pause on mobile tap, resume after 2 seconds */
-document.addEventListener("DOMContentLoaded", function () {
-  const logoCarousel = document.querySelector(".logo-strip");
 
-  if (!logoCarousel) return;
-
-  let resumeTimer;
-
-  function pauseThenResume() {
-    logoCarousel.classList.add("paused");
-
-    clearTimeout(resumeTimer);
-
-    resumeTimer = setTimeout(function () {
-      logoCarousel.classList.remove("paused");
-
-      // Force mobile browsers to release sticky hover behavior
-      logoCarousel.blur();
-      document.activeElement?.blur();
-    }, 2000);
-  }
-
-  logoCarousel.addEventListener("touchstart", pauseThenResume, { passive: true });
-  logoCarousel.addEventListener("click", pauseThenResume);
-});
