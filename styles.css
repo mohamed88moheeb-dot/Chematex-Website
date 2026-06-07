@@ -163,3 +163,36 @@ img{max-width:100%;display:block}
   background: var(--teal-dark);
   color: white;
 }
+
+
+/* Product landing page document buttons */
+.product-doc-buttons .btn-primary,
+.product-doc-buttons .btn-secondary {
+  background: #ffffff;
+  color: var(--navy);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.product-doc-buttons .btn-primary:hover,
+.product-doc-buttons .btn-secondary:hover {
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+  border-color: var(--teal);
+  transform: translateY(-2px);
+}
+
+/* Make Get a Quote the colored button */
+.product-doc-buttons .btn-outline {
+  background: var(--navy);
+  color: #ffffff;
+  border: 1px solid var(--navy);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
+}
+
+.product-doc-buttons .btn-outline:hover {
+  background: #020617;
+  color: #ffffff;
+  border-color: #020617;
+  transform: translateY(-2px);
+}
