@@ -1554,3 +1554,8 @@ img{max-width:100%;display:block}
   }
 }
 
+/* Logo carousel pause state */
+.logo-strip.paused,
+.logo-strip.paused * {
+  animation-play-state: paused !important;
+}
