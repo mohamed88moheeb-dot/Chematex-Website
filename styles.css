@@ -1535,3 +1535,21 @@ img{max-width:100%;display:block}
     padding: 12px 10px !important;
   }
 }
+/* Mobile-only pill line breaks */
+.mobile-only-break {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only-break {
+    display: block;
+  }
+
+  .product-nav .pill,
+  .category-pills .pill,
+  .solutions-pills .pill,
+  .categories-pills .pill {
+    text-align: center !important;
+    line-height: 1.15 !important;
+  }
+}
