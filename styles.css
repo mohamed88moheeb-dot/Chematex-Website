@@ -963,6 +963,33 @@ img{max-width:100%;display:block}
   gap: 28px;
 }
 
+.product-section-block {
+  scroll-margin-top: 100px;
+}
+
+.product-line-block {
+  margin-top: 34px;
+}
+
+.product-line-block + .product-line-block {
+  padding-top: 34px;
+  border-top: 1px solid rgba(71,111,117,.12);
+}
+
+.product-line-heading {
+  margin-bottom: 18px;
+}
+
+.product-line-heading h3 {
+  color: var(--navy);
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.product-section-block .product-card {
+  min-height: 280px;
+}
+
 /* Independent phone number hover effect */
 .phone-links {
   display: flex;

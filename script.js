@@ -10,7 +10,7 @@ const links = [
 
 const categoryLinks = [
   ['category-textile-auxiliaries.html', 'Textile Auxiliaries'],
-  ['category-industrial-detergents.html', 'Industrial Detergents'],
+  ['category-industrial-detergents.html', 'Household Detergents & Cleaners'],
   ['category-cosmetics-personal-care.html', 'Cosmetics & Personal Care'],
   ['category-ro-water-treatment.html', 'RO Water Treatment'],
   ['category-sanitizers-disinfectants.html', 'Sanitizers & Disinfectants'],
@@ -19,6 +19,7 @@ const categoryLinks = [
 
 const productsByCategory = {
   "Textile Auxiliaries": [
+
     "CHEMASOLY SR CONC OIL REMOVER AGENT",
     "CHEMAWET GBR OIL REMOVER AND WETTING AGENT",
     "CHEMASTAB CIF/N PEROXIDE STABILIZER",
@@ -56,16 +57,62 @@ const productsByCategory = {
     "CHEMASOFT MRD SOFT AGENT",
     "CHEMAGURD PFC-64 WATER REPELLENT"
   ],
-  "Industrial Detergents": [
-    "Products available upon request"
+  "Household Detergents & Cleaners": [
+    "CHEMA STRIL",
+    "CHEMA BOOST",
+    "CHEMA STAIN EXTRA",
+    "CHEMA BRIGHT",
+    "CHEMA CHLORINZ",
+    "CHEMA BUFF",
+    "CHEMA SILK",
+    "CHEMASILK ULTRA",
+    "CHEMOLINE ALL IN 1",
+    "CHEMOLINE ECO",
+    "CHEMOLINE FOAM",
+    "CHEMASOL HS-300",
+    "CHEMASOL HS-500",
+    "CHEMASOL CETO 7 IN 1",
+    "CHEMATRIL WD-ECO",
+    "CHEMAGRIL ULTRA",
+    "CHEMASCALE SQ-200",
+    "CHEMAGLOSS STL",
+    "CHEMASTRIP",
+    "CHEMADRY",
+    "CHEMASHINE STAR",
+    "CHEMASPARK G",
+    "CHEMARUST",
+    "CHEMAWOOD",
+    "CHEMAFRESH",
+    "CHEMATTOL 4 IN 1",
+    "CHEMALIME",
+    "CHEMACARP FOAM",
+    "CHEMACARP"
   ],
   "Cosmetics & Personal Care": [
-    "Products available upon request"
-  ],
-  "RO Water Treatment": [
-    "Products available upon request"
+    "CHEMACARE",
+    "PROCARE",
+    "CHEMALINE ARGAN",
+    "CHEMALINE SHEA",
+    "CHEMALINE COCOA",
+    "CHEMALINE FLOWERS",
+    "CHEMALINE OUD",
+    "CHEMASILK NORMAL",
+    "CHEMASILK MOIST",
+    "CHEMASILK GRZ",
+    "CHEMASILK DRF"
   ],
   "Sanitizers & Disinfectants": [
+    "CHEMA SANT-G",
+    "CHEMAGLOSS SSD",
+    "CHEMOXIL HYG",
+    "CHEMASINZE GT CONC",
+    "CHEMASINT CPS",
+    "CHEMASURF 3 IN 1",
+    "CHEMATTOL",
+    "CHEMASINZE 70",
+    "CHEMOL"
+  ],
+  "RO Water Treatment": [
     "Products available upon request"
   ],
   "Raw Materials": [
@@ -114,7 +161,7 @@ function renderFooter(){
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html" style="color:white;font-size:1.75rem;margin-bottom:14px">${logoImg}<span>Chematex</span></a>
-          <p>Specialized chemical solutions for textile processing, industrial cleaning, personal care, disinfection, RO water treatment, and raw material needs.</p>
+          <p>Specialized chemical solutions for textile processing, household cleaning, personal care, disinfection, textile processing, RO water treatment, and raw material needs.</p>
         </div>
         <div>
           <h4>Quick Links</h4>
@@ -127,7 +174,7 @@ function renderFooter(){
         <div>
           <h4>Categories</h4>
           <a href="category-textile-auxiliaries.html">Textile Auxiliaries</a>
-          <a href="category-industrial-detergents.html">Industrial Detergents</a>
+          <a href="category-industrial-detergents.html">Household Detergents & Cleaners</a>
           <a href="category-cosmetics-personal-care.html">Cosmetics & Personal Care</a>
           <a href="category-ro-water-treatment.html">RO Water Treatment</a>
           <a href="category-sanitizers-disinfectants.html">Sanitizers & Disinfectants</a>
