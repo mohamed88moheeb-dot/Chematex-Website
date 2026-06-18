@@ -120,6 +120,64 @@ const productsByCategory = {
   ]
 };
 
+const defaultPackagingByCategory = {
+  "Textile Auxiliaries": ["Available upon request"],
+  "RO Water Treatment": ["Available upon request"],
+  "Raw Materials": ["Available upon request"]
+};
+
+const packagingByProduct = {
+  "CHEMA STRIL": ["20 L"],
+  "CHEMA BOOST": ["20 L"],
+  "CHEMA STAIN EXTRA": ["20 L"],
+  "CHEMA BRIGHT": ["20 L"],
+  "CHEMA CHLORINZ": ["20 L"],
+  "CHEMA BUFF": ["20 L"],
+  "CHEMA SILK": ["20 L"],
+  "CHEMASILK ULTRA": ["20 L"],
+  "CHEMA SANT-G": ["20 L"],
+  "CHEMOLINE ALL IN 1": ["5 L", "20 L"],
+  "CHEMOLINE ECO": ["5 L", "20 L"],
+  "CHEMOLINE FOAM": ["5 L", "20 L"],
+  "CHEMASOL HS-300": ["5 L", "20 L"],
+  "CHEMASOL HS-500": ["5 L", "20 L"],
+  "CHEMASOL CETO 7 IN 1": ["5 L", "20 L"],
+  "CHEMATRIL WD-ECO": ["5 L", "20 L"],
+  "CHEMAGRIL ULTRA": ["5 L", "20 L"],
+  "CHEMASCALE SQ-200": ["5 L", "20 L"],
+  "CHEMAGLOSS SSD": ["5 L", "20 L"],
+  "CHEMAGLOSS STL": ["5 L", "20 L"],
+  "CHEMASTRIP": ["5 L", "20 L"],
+  "CHEMADRY": ["5 L", "20 L"],
+  "CHEMOXIL HYG": ["5 L", "20 L"],
+  "CHEMASINZE GT CONC": ["5 L", "20 L"],
+  "CHEMASINT CPS": ["1 kg", "5 kg"],
+  "CHEMASHINE STAR": ["1 kg", "5 kg"],
+  "CHEMASURF 3 IN 1": ["5 L", "20 L"],
+  "CHEMASPARK G": ["5 L", "20 L"],
+  "CHEMARUST": ["5 L", "20 L"],
+  "CHEMAWOOD": ["5 L", "20 L"],
+  "CHEMAFRESH": ["5 L", "20 L"],
+  "CHEMATTOL 4 IN 1": ["5 L", "20 L"],
+  "CHEMALIME": ["5 L", "20 L"],
+  "CHEMACARP FOAM": ["5 L", "20 L"],
+  "CHEMACARP": ["5 L", "20 L"],
+  "CHEMATTOL": ["5 L", "20 L"],
+  "CHEMACARE": ["5 L", "20 L"],
+  "PROCARE": ["5 L", "20 L"],
+  "CHEMALINE ARGAN": ["5 L", "20 L"],
+  "CHEMALINE SHEA": ["5 L", "20 L"],
+  "CHEMALINE COCOA": ["5 L", "20 L"],
+  "CHEMALINE FLOWERS": ["5 L", "20 L"],
+  "CHEMALINE OUD": ["5 L", "20 L"],
+  "CHEMASILK NORMAL": ["5 L", "20 L"],
+  "CHEMASILK MOIST": ["5 L", "20 L"],
+  "CHEMASILK GRZ": ["5 L", "20 L"],
+  "CHEMASILK DRF": ["5 L", "20 L"],
+  "CHEMASINZE 70": ["5 L", "20 L"],
+  "CHEMOL": ["50 g", "500 g", "20 kg"]
+};
+
 const logoImg = `<img src="assets/logo/chematex-icon.png" alt="Chematex logo mark" class="brand-logo" />`;
 
 function renderHeader(){
@@ -265,6 +323,7 @@ function setupQuoteForm(){
   const categorySelect = document.getElementById("quoteCategory");
   const productSelect = document.getElementById("quoteProduct");
   const quantitySelect = document.getElementById("quoteQuantity");
+  const packagingSelect = document.getElementById("quotePackaging");
 
   if (quantitySelect && quantitySelect.options.length <= 1) {
     for (let i = 1; i <= 100; i++) {
@@ -275,12 +334,56 @@ function setupQuoteForm(){
     }
   }
 
+  if (packagingSelect) {
+    const resetPackaging = function (message) {
+      packagingSelect.innerHTML = "";
+      const option = document.createElement("option");
+      option.value = "";
+      option.textContent = message;
+      packagingSelect.appendChild(option);
+    };
+
+    resetPackaging("Select a product first");
+  }
+
   if (categorySelect && productSelect) {
+    const populatePackaging = function () {
+      if (!packagingSelect) return;
+
+      const selectedProduct = productSelect.value;
+      const selectedCategory = categorySelect.value;
+      packagingSelect.innerHTML = "";
+
+      if (!selectedProduct) {
+        const option = document.createElement("option");
+        option.value = "";
+        option.textContent = "Select a product first";
+        packagingSelect.appendChild(option);
+        return;
+      }
+
+      const baseOptions = packagingByProduct[selectedProduct] || defaultPackagingByCategory[selectedCategory] || ["Available upon request"];
+      const options = Array.from(new Set([...baseOptions, "Sample"]));
+
+      const placeholderOption = document.createElement("option");
+      placeholderOption.value = "";
+      placeholderOption.textContent = "Select Packaging";
+      packagingSelect.appendChild(placeholderOption);
+
+      options.forEach(function (packaging) {
+        const option = document.createElement("option");
+        option.value = packaging;
+        option.textContent = packaging;
+        packagingSelect.appendChild(option);
+      });
+    };
+
     const populateProducts = function () {
       const selectedCategory = categorySelect.value;
       const products = productsByCategory[selectedCategory] || [];
 
       productSelect.innerHTML = "";
+      populatePackaging();
 
       if (!selectedCategory) {
         const defaultOption = document.createElement("option");
@@ -301,13 +404,17 @@ function setupQuoteForm(){
         option.textContent = product;
         productSelect.appendChild(option);
       });
+
+      populatePackaging();
     };
 
     categorySelect.addEventListener("change", populateProducts);
+    productSelect.addEventListener("change", populatePackaging);
 
     const params = new URLSearchParams(window.location.search);
     const productParam = params.get("product");
     const categoryParam = params.get("category");
+    const packagingParam = params.get("packaging");
 
     if (categoryParam) {
       categorySelect.value = categoryParam;
@@ -320,6 +427,16 @@ function setupQuoteForm(){
         });
         if (matchingOption) {
           productSelect.value = matchingOption.value;
+          populatePackaging();
+
+          if (packagingParam && packagingSelect) {
+            const matchingPackagingOption = Array.from(packagingSelect.options).find(function (option) {
+              return option.value === packagingParam || option.textContent === packagingParam;
+            });
+            if (matchingPackagingOption) {
+              packagingSelect.value = matchingPackagingOption.value;
+            }
+          }
         }
       }
     }

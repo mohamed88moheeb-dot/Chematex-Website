@@ -1629,3 +1629,21 @@ img{max-width:100%;display:block}
 .product-card h3 + .product-function-card{padding-bottom:16px;border-bottom:1px solid rgba(71,111,117,.16)}
 .product-card h3 + .product-function-card + .product-summary{margin-top:0}
 @media(max-width:768px){.product-function{font-size:1rem}.product-function-card{font-size:.9rem}}
+
+/* Keep dropdowns native, with consistent iOS-friendly sizing */
+.field select {
+  height: 50px;
+  line-height: 1.2;
+  background-color: #f8fbfc !important;
+  color: var(--navy);
+  -webkit-appearance: menulist;
+  appearance: auto;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .field select {
+    height: 52px;
+    font-size: 16px !important;
+    border-radius: 14px !important;
+  }
+}
