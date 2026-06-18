@@ -17,23 +17,79 @@ const categoryLinks = [
   ['category-raw-materials.html', 'Raw Materials']
 ];
 
+const productsByCategory = {
+  "Textile Auxiliaries": [
+    "CHEMASOLY SR CONC OIL REMOVER AGENT",
+    "CHEMAWET GBR OIL REMOVER AND WETTING AGENT",
+    "CHEMASTAB CIF/N PEROXIDE STABILIZER",
+    "CHEMAWET MRF-400 WETTING AGENT",
+    "CHEMAFOAM CM-100 ANTIFOAM AGENT",
+    "CHEMAFOAM SY-150 ANTIFOAM AGENT",
+    "CHEMACID CO BUFFER FOR COTTON",
+    "CHEMAQUEST LP - 500 SEQUESTERING AGENT",
+    "CHEMAQUEST PNL-200 SEQUESTERING AGENT",
+    "CHEMACID RED CONC REDUCTION CLEANING AGENT",
+    "CHEMAREDUCT RDL REDUCTION CLEARING AGENT",
+    "CHEMACARRIER ECO",
+    "CHEMACARRIER HT-CONC HIGH TEMPERATURE CARRIER",
+    "CHEMAZYME HO HYDROGEN PEROXIDE KILLER ENZYME",
+    "CHEMAZYME PL ANTIPILLING AND BIOPOLISH ENZYME",
+    "CHEMAFIX RC-700 FIXING AGENT",
+    "CHEMALEV LCR - 945 LEVELING DISPERSING AGENT FOR POLYESTER",
+    "CHEMALEV RL LEVELING AND WASHING OFF FOR COTTON",
+    "CHEMALEV RPD - 999 RAPID TEMPERATURE LEVELING AGENT FOR POLYESTER",
+    "CHEMALEV SH-500 LEVELING DISPERSING AGENT FOR POLYESTER",
+    "CHEMAWASH R CONC WASHING AGENT FOR REACTIVE DYE",
+    "CHEMASTATE XH ANTISTATIC AGENT",
+    "CHEMASTATE ZX ANTISTATIC AGENT",
+    "CHEMASIL 600 MICRO SILICON",
+    "CHEMASIL MC 55 MACRO SILICON",
+    "BLOCK MACRO SILICON LC-930 SMOOTH SLIPPERY FEELING",
+    "CHEMASIL BK 480 BLOCK MACRO SILICON",
+    "CHEMASIL MAC 380 BLOCK MACRO SILICON",
+    "BLOCK MICRO SILICON LC-845 BLOCK MICRO SILICON",
+    "CHEMASIL BK 725 BLOCK MICRO SILICON",
+    "CHEMADEEP SIL \u2013 541 DEEP SILICON",
+    "CHEMASIL HYDRO 446 CONC HYDROPHILIC SILICON AGENT",
+    "CHEMASIL ICE 330 ICE SILICON AGENT",
+    "CHEMASOFT CST RAISING AGENT",
+    "CHEMASOFT MRD SOFT AGENT",
+    "CHEMAGURD PFC-64 WATER REPELLENT"
+  ],
+  "Industrial Detergents": [
+    "Products available upon request"
+  ],
+  "Cosmetics & Personal Care": [
+    "Products available upon request"
+  ],
+  "RO Water Treatment": [
+    "Products available upon request"
+  ],
+  "Sanitizers & Disinfectants": [
+    "Products available upon request"
+  ],
+  "Raw Materials": [
+    "Products available upon request"
+  ]
+};
+
 const logoImg = `<img src="assets/logo/chematex-icon.png" alt="Chematex logo mark" class="brand-logo" />`;
 
 function renderHeader(){
   const categoryDropdown = categoryLinks.map(([href,label]) => `<a href="${href}">${label}</a>`).join('');
   const nav = links.map(([href,label,key,hasDropdown]) => {
     if(hasDropdown){
-      return `<div class="nav-dropdown"><a href="${href}" class="${currentPage===key?'active':''}">${label} <span>⌄</span></a><div class="dropdown-menu">${categoryDropdown}</div></div>`;
+      return `<div class="nav-dropdown"><a href="${href}" class="${currentPage===key?'active':''}">${label} <span aria-hidden="true">⌄</span></a><div class="dropdown-menu">${categoryDropdown}</div></div>`;
     }
     return `<a href="${href}" class="${currentPage===key?'active':''}">${label}</a>`;
   }).join('');
   const mobile = links.map(([href,label,key,hasDropdown]) => {
     if(hasDropdown){
       return `
-        <button class="mobile-dropdown-toggle ${currentPage===key?'active':''}" type="button">
-          ${label} <span>⌄</span>
+        <button class="mobile-dropdown-toggle ${currentPage===key?'active':''}" type="button" aria-expanded="false" aria-controls="mobile-category-submenu">
+          ${label} <span aria-hidden="true">⌄</span>
         </button>
-        <div class="mobile-submenu mobile-submenu-collapsible">
+        <div id="mobile-category-submenu" class="mobile-submenu mobile-submenu-collapsible">
           ${categoryDropdown}
         </div>
       `;
@@ -45,9 +101,9 @@ function renderHeader(){
       <div class="container navbar">
         <a class="brand" href="index.html" aria-label="Chematex home">${logoImg}<span>Chematex</span></a>
         <nav class="nav-links" aria-label="Main navigation">${nav}</nav>
-        <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
       </div>
-      <div class="mobile-menu">${mobile}</div>
+      <div id="mobile-menu" class="mobile-menu">${mobile}</div>
     </header>`;
 }
 
@@ -72,9 +128,10 @@ function renderFooter(){
           <h4>Categories</h4>
           <a href="category-textile-auxiliaries.html">Textile Auxiliaries</a>
           <a href="category-industrial-detergents.html">Industrial Detergents</a>
-          <a href="category-cosmetics-personal-care.html">Personal Care</a>
+          <a href="category-cosmetics-personal-care.html">Cosmetics & Personal Care</a>
           <a href="category-ro-water-treatment.html">RO Water Treatment</a>
-          <a href="category-sanitizers-disinfectants.html">Sanitizers</a>
+          <a href="category-sanitizers-disinfectants.html">Sanitizers & Disinfectants</a>
+          <a href="category-raw-materials.html">Raw Materials</a>
         </div>
         <div>
           <h4>Contact</h4>
@@ -120,7 +177,7 @@ function setupForms(){
       e.preventDefault();
       const note = form.querySelector('.form-note');
       if(note){
-        note.textContent = 'Thank you. This demo form is ready visually. Connect it to Formspree, Netlify Forms, EmailJS, or your backend to receive messages.';
+        note.textContent = 'Thank you. This form is ready visually. Connect it to Formspree, Netlify Forms, EmailJS, or your backend to receive messages.';
         note.style.color = '#365d63';
         note.style.fontWeight = '800';
       }
@@ -128,117 +185,41 @@ function setupForms(){
   });
 }
 
-function setupMobileDropdown(){
-  const toggle = document.querySelector('.mobile-dropdown-toggle');
+function setupMobileNavigation(){
+  const menuButton = document.querySelector('.menu-btn');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const submenuToggle = document.querySelector('.mobile-dropdown-toggle');
   const submenu = document.querySelector('.mobile-submenu-collapsible');
 
-  if(toggle && submenu){
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      submenu.classList.toggle('open');
+  if(menuButton && mobileMenu){
+    menuButton.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  if(submenuToggle && submenu){
+    submenuToggle.addEventListener('click', () => {
+      const isOpen = submenu.classList.toggle('open');
+      submenuToggle.classList.toggle('open', isOpen);
+      submenuToggle.setAttribute('aria-expanded', String(isOpen));
     });
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderHeader();
-  setupMobileDropdown();
-  renderFooter();
-  renderWhatsApp();
-  setupTabs();
-  setupForms();
-});
-
-/* Floating LinkedIn button */
-document.addEventListener("DOMContentLoaded", function () {
-  const linkedinButton = document.createElement("a");
-
-  linkedinButton.className = "linkedin-float";
-  linkedinButton.href = "PASTE_YOUR_LINKEDIN_LINK_HERE";
-  linkedinButton.target = "_blank";
-  linkedinButton.rel = "noopener";
-  linkedinButton.setAttribute("aria-label", "Open LinkedIn");
-
-  linkedinButton.innerHTML = "in";
-
-  document.body.appendChild(linkedinButton);
-});
-
-/* Quote form dynamic product dropdown + quantity options */
-document.addEventListener("DOMContentLoaded", function () {
-  const productsByCategory = {
-    "Textile Auxiliaries": [
-      "Pretreatment Product 01",
-      "Pretreatment Product 02",
-      "Pretreatment Product 03",
-      "Pretreatment Product 04",
-      "Pretreatment Product 05",
-      "Pretreatment Product 06",
-      "Pretreatment Product 07",
-      "Pretreatment Product 08",
-      "Dyeing Product 01",
-      "Dyeing Product 02",
-      "Dyeing Product 03",
-      "Dyeing Product 04",
-      "Dyeing Product 05",
-      "Dyeing Product 06",
-      "Dyeing Product 07",
-      "Dyeing Product 08",
-      "Printing Product 01",
-      "Printing Product 02",
-      "Printing Product 03",
-      "Printing Product 04",
-      "Printing Product 05",
-      "Printing Product 06",
-      "Printing Product 07",
-      "Printing Product 08",
-      "Finishing Product 01",
-      "Finishing Product 02",
-      "Finishing Product 03",
-      "Finishing Product 04",
-      "Finishing Product 05",
-      "Finishing Product 06",
-      "Finishing Product 07",
-      "Finishing Product 08"
-    ],
-    "Industrial Detergents": [
-      "All-in-One Sanitizer and Disinfectant - CHEMASURF 3 in 1",
-      "Multi-Surface Glass Cleaner - CHEMASPARK G",
-      "Lime Scale Remover - CHEMARUST"
-    ],
-    "Cosmetics & Personal Care": [
-      "Mild hand-wash for frequent use - CHEMACARE",
-      "Foaming antibacterial hand wash - PROCARE",
-      "Shower gel with Argan oil - CHEMALINE (Argan)"
-    ],
-    "RO Water Treatment": [
-      "RO 1",
-      "RO 2",
-      "RO 3"
-    ],
-    "Sanitizers & Disinfectants": [
-      "Alcohol Gel Hand Sanitizer - Chemol",
-      "Alcohol Rub for Hand Disinfection - CHEMASINZE (70)",
-      "Sanitizer for all Fabrics - CHEMA SANITIZER",
-      "Cleanser, Disinfectant, and Antiseptic - CHEMATOL"
-    ],
-    "Raw Materials": [
-      "RM 1",
-      "RM 2",
-      "RM 3",
-      "RM 4",
-      "RM 5",
-      "RM 6",
-      "RM 7",
-      "RM 8"
-    ]
-  };
-
+function setupQuoteForm(){
   const categorySelect = document.getElementById("quoteCategory");
   const productSelect = document.getElementById("quoteProduct");
   const quantitySelect = document.getElementById("quoteQuantity");
 
-  if (quantitySelect) {
+  if (quantitySelect && quantitySelect.options.length <= 1) {
     for (let i = 1; i <= 100; i++) {
       const option = document.createElement("option");
       option.value = i;
@@ -248,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (categorySelect && productSelect) {
-    categorySelect.addEventListener("change", function () {
+    const populateProducts = function () {
       const selectedCategory = categorySelect.value;
       const products = productsByCategory[selectedCategory] || [];
 
@@ -273,40 +254,50 @@ document.addEventListener("DOMContentLoaded", function () {
         option.textContent = product;
         productSelect.appendChild(option);
       });
-    });
-  }
-});
+    };
 
+    categorySelect.addEventListener("change", populateProducts);
 
-/* Auto-select quote product and category from product pages */
-document.addEventListener("DOMContentLoaded", function () {
-  const params = new URLSearchParams(window.location.search);
-  const productParam = params.get("product");
-  const categoryParam = params.get("category");
-  const categorySelect = document.getElementById("quoteCategory");
-  const productSelect = document.getElementById("quoteProduct");
+    const params = new URLSearchParams(window.location.search);
+    const productParam = params.get("product");
+    const categoryParam = params.get("category");
 
-  if (categorySelect && productSelect && categoryParam) {
-    categorySelect.value = categoryParam;
-    categorySelect.dispatchEvent(new Event("change"));
+    if (categoryParam) {
+      categorySelect.value = categoryParam;
+      populateProducts();
 
-    if (productParam) {
-      setTimeout(function () {
+      if (productParam) {
+        const normalizedProduct = productParam.trim();
         const matchingOption = Array.from(productSelect.options).find(function (option) {
-          return option.value === productParam || option.textContent === productParam;
+          return option.value === normalizedProduct || option.textContent === normalizedProduct;
         });
         if (matchingOption) {
           productSelect.value = matchingOption.value;
         }
-      }, 50);
+      }
     }
   }
-});
+}
 
+function setupLinkedInButton(){
+  const linkedinUrl = "PASTE_YOUR_LINKEDIN_LINK_HERE";
 
-/* Logo carousel: pause when tapped, resume when tapping outside */
-document.addEventListener("DOMContentLoaded", function () {
-  const logoCarousel = document.querySelector(".logo-strip");
+  if (!linkedinUrl || linkedinUrl === "PASTE_YOUR_LINKEDIN_LINK_HERE") {
+    return;
+  }
+
+  const linkedinButton = document.createElement("a");
+  linkedinButton.className = "linkedin-float";
+  linkedinButton.href = linkedinUrl;
+  linkedinButton.target = "_blank";
+  linkedinButton.rel = "noopener";
+  linkedinButton.setAttribute("aria-label", "Open Chematex on LinkedIn");
+  linkedinButton.innerHTML = "in";
+  document.body.appendChild(linkedinButton);
+}
+
+function setupLogoCarouselPause(){
+  const logoCarousel = document.querySelector(".logo-carousel");
 
   if (!logoCarousel) return;
 
@@ -329,4 +320,16 @@ document.addEventListener("DOMContentLoaded", function () {
       logoCarousel.classList.remove("paused");
     }
   }, { passive: true });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderHeader();
+  setupMobileNavigation();
+  renderFooter();
+  renderWhatsApp();
+  setupTabs();
+  setupForms();
+  setupQuoteForm();
+  setupLinkedInButton();
+  setupLogoCarouselPause();
 });

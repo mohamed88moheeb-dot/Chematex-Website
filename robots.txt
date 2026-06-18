@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamed88moheeb-dot.github.io/Chematex-Website/sitemap.xml
