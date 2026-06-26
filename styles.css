@@ -2339,6 +2339,13 @@ img{max-width:100%;display:block}
 /* =========================
    Mobile Hero — Liquid Glass
    ========================= */
+
+/* Hidden on desktop — only activated inside the mobile media query */
+.hero-bg-image,
+.hero-bg-overlay {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .hero {
     position: relative;
@@ -2354,6 +2361,7 @@ img{max-width:100%;display:block}
   }
 
   .hero-bg-image {
+    display: block;
     position: absolute;
     inset: 0;
     width: 100%;
@@ -2361,10 +2369,10 @@ img{max-width:100%;display:block}
     object-fit: cover;
     object-position: center 10%;
     z-index: 0;
-    display: block;
   }
 
   .hero-bg-overlay {
+    display: block;
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -2387,13 +2395,13 @@ img{max-width:100%;display:block}
   }
 
   .hero-glass-card {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(12px) saturate(1.4);
-    -webkit-backdrop-filter: blur(12px) saturate(1.4);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(8px) saturate(1.2);
+    -webkit-backdrop-filter: blur(8px) saturate(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 22px;
     padding: 26px 22px 22px;
-    box-shadow: 0 4px 36px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
   }
 
   .hero-glass-card .eyebrow {
