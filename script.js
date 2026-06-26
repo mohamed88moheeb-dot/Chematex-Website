@@ -120,7 +120,7 @@ const productsByCategory = {
 };
 
 const defaultPackagingByCategory = {
-  "Textile Auxiliaries": ["Available upon request"],
+  "Textile Auxiliaries": ["60 kg", "125 kg", "Sample available"],
   "RO Water Treatment": ["Available upon request"],
   "Raw Materials": ["Available upon request"]
 };
@@ -174,7 +174,11 @@ const packagingByProduct = {
   "CHEMASILK GRZ": ["5 L", "20 L"],
   "CHEMASILK DRF": ["5 L", "20 L"],
   "CHEMASINZE 70": ["5 L", "20 L"],
-  "CHEMOL": ["50 g", "500 g", "20 kg"]
+  "CHEMOL": ["50 g", "500 g", "20 kg"],
+  "CHEMACARRIER ECO": ["50 kg", "100 kg", "Sample available"],
+  "CHEMACARRIER HT-CONC HIGH TEMPERATURE CARRIER": ["50 kg", "100 kg", "Sample available"],
+  "CHEMAZYME HO HYDROGEN PEROXIDE KILLER ENZYME": ["50 kg", "100 kg", "Sample available"],
+  "CHEMAZYME PL ANTIPILLING AND BIOPOLISH ENZYME": ["50 kg", "100 kg", "Sample available"]
 };
 
 const logoImg = `<img src="assets/logo/chematex-standalone-logo.png" alt="Chematex logo mark" class="brand-logo" />`;
