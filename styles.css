@@ -481,8 +481,7 @@ img{max-width:100%;display:block}
 
   .card h3,
   .product-card h3,
-  .product-card.final-product-card h3,
-  .category-card h3 {
+  .product-card.final-product-card h3 {
     font-size: 1.35rem !important;
     line-height: 1.2 !important;
     max-width: 100%;
@@ -507,22 +506,14 @@ img{max-width:100%;display:block}
 
   /* Category cards */
   .category-card {
-    min-height: 240px !important;
+    min-height: 200px !important;
     justify-content: flex-end !important;
-  }
-
-  .category-card h3 {
-    font-size: 1.45rem !important;
-  }
-
-  .category-card p {
-    margin-top: 8px !important;
   }
 
   .category-card .link-arrow,
   .product-card .link-arrow,
   .product-card.final-product-card .link-arrow {
-    margin-top: 20px !important;
+    margin-top: 16px !important;
   }
 
   /* Product cards */
@@ -877,20 +868,19 @@ img{max-width:100%;display:block}
   position: relative;
   z-index: 2;
   color: #ffffff;
-  font-size: clamp(1.6rem, 2vw, 2.2rem);
-  line-height: 1.12;
+  font-size: 1.22rem;
+  line-height: 1.25;
   font-weight: 850;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.025em;
   margin: 0;
-  max-width: 92%;
 }
 
 .category-card h3::after {
   content: "";
   display: block;
-  width: 62px;
+  width: 48px;
   height: 2px;
-  margin: 20px 0 18px;
+  margin: 14px 0 12px;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--yellow), rgba(255,255,255,0.35));
 }
@@ -898,22 +888,21 @@ img{max-width:100%;display:block}
 .category-card p {
   position: relative;
   z-index: 2;
-  color: rgba(255,255,255,0.80);
-  font-size: 1.02rem;
-  line-height: 1.65;
+  color: rgba(255,255,255,0.78);
+  font-size: 0.9rem;
+  line-height: 1.6;
   margin: 0;
-  max-width: 92%;
 }
 
 .category-card .link-arrow {
   position: relative;
   z-index: 2;
-  width: fit-content;
   margin-top: auto;
-  padding-top: 26px;
+  padding-top: 20px;
   color: #ffffff;
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: 0.88rem;
+  font-weight: 800;
+  white-space: nowrap;
   transition: transform 0.25s ease;
 }
 
