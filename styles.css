@@ -2335,3 +2335,111 @@ img{max-width:100%;display:block}
     font-size: 0.92rem;
   }
 }
+
+/* =========================
+   Mobile Hero — Liquid Glass
+   ========================= */
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    min-height: 100dvh;
+    background: none !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    padding-bottom: 36px;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .hero-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 10%;
+    z-index: 0;
+    display: block;
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(8, 17, 31, 0.28) 0%,
+      rgba(8, 17, 31, 0.10) 35%,
+      rgba(8, 17, 31, 0.60) 100%
+    );
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    align-items: flex-end !important;
+  }
+
+  .hero-glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px) saturate(1.4);
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 22px;
+    padding: 26px 22px 22px;
+    box-shadow: 0 4px 36px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  }
+
+  .hero-glass-card .eyebrow {
+    color: rgba(200, 235, 240, 0.90) !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.13em !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-glass-card h1 {
+    color: #ffffff !important;
+    font-size: 2rem !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.045em !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-glass-card p {
+    color: rgba(255, 255, 255, 0.82) !important;
+    font-size: 0.94rem !important;
+    line-height: 1.62 !important;
+    margin: 0 0 20px !important;
+    max-width: 100% !important;
+  }
+
+  .hero-glass-card .btn-row {
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .hero-glass-card .btn-primary {
+    background: linear-gradient(135deg, #476f75, #365d63) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 8px 22px rgba(54, 93, 99, 0.38) !important;
+  }
+
+  .hero-glass-card .btn-secondary {
+    background: rgba(255, 255, 255, 0.10) !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.32) !important;
+    box-shadow: none !important;
+  }
+
+  .hero-visual {
+    display: none !important;
+  }
+}
