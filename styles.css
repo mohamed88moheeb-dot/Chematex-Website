@@ -507,7 +507,7 @@ img{max-width:100%;display:block}
   /* Category cards */
   .category-card {
     min-height: 200px !important;
-    justify-content: flex-end !important;
+    padding-top: 70px !important;
   }
 
   .category-card .link-arrow,
@@ -815,6 +815,7 @@ img{max-width:100%;display:block}
   justify-content: flex-start;
   min-height: 340px;
   padding: 34px;
+  padding-top: 82px;
   border-radius: 34px;
   overflow: hidden;
   text-decoration: none;
@@ -831,11 +832,12 @@ img{max-width:100%;display:block}
 
 .category-card::before {
   content: "Specialized Range";
-  position: relative;
+  position: absolute;
+  top: 28px;
+  left: 28px;
   z-index: 2;
   display: inline-flex;
   width: fit-content;
-  margin-bottom: 24px;
   padding: 8px 13px;
   border-radius: 999px;
   background: rgba(255,255,255,0.12);
@@ -2037,6 +2039,7 @@ img{max-width:100%;display:block}
     display:flex!important;
     flex-direction:row!important;
     overflow-x:auto;
+    overflow-y:hidden;
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
     gap:12px!important;
@@ -2104,9 +2107,13 @@ img{max-width:100%;display:block}
 
   /* Tighten category card internal spacing on mobile */
   .category-card::before{
-    margin-bottom:12px!important;
+    top:16px!important;
+    left:16px!important;
     padding:5px 10px!important;
     font-size:0.6rem!important;
+  }
+  .category-card{
+    padding-top:56px!important;
   }
 
   .category-card h3::after{
