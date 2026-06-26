@@ -520,9 +520,6 @@ function setupLogoCarouselPause(){
 
 function setupScrollReveal() {
   const targets = [
-    '.section-title',
-    '.section-copy',
-    '.eyebrow',
     '.category-card',
     '.product-card',
     '.subcategory-card',
@@ -534,20 +531,22 @@ function setupScrollReveal() {
     '.product-doc-buttons',
     '.about-stat-pill',
     '.cta',
-    '.split > div',
-    '.hero-grid > div',
-    '.btn-row',
-    '.subcat-pill-grid',
-    '.breadcrumb',
-    '.product-visual',
-    '.product-function',
   ];
 
   const elements = document.querySelectorAll(targets.join(','));
-  elements.forEach((el, i) => {
+  const viewH = window.innerHeight;
+
+  elements.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    // already in viewport on load — show immediately, no animation
+    if (rect.top < viewH && rect.bottom > 0) {
+      return;
+    }
     el.classList.add('reveal');
-    // stagger siblings inside grid/flex parents
-    const siblings = el.parentElement ? [...el.parentElement.children].filter(c => c.classList.contains(el.classList[0])) : [];
+    // stagger cards that share a parent grid
+    const siblings = el.parentElement
+      ? [...el.parentElement.children].filter(c => c.classList.contains(el.classList[0]))
+      : [];
     const idx = siblings.indexOf(el);
     if (idx > 0 && idx < 5) el.classList.add(`reveal-delay-${idx}`);
   });
@@ -559,9 +558,9 @@ function setupScrollReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
-  elements.forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
