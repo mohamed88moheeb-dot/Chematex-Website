@@ -399,7 +399,7 @@ function setupQuoteForm(){
       }
 
       const baseOptions = packagingByProduct[selectedProduct] || defaultPackagingByCategory[selectedCategory] || ["Available upon request"];
-      const options = Array.from(new Set([...baseOptions, "Sample"]));
+      const options = baseOptions;
 
       const placeholderOption = document.createElement("option");
       placeholderOption.value = "";
