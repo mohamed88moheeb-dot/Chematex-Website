@@ -2032,3 +2032,58 @@ img{max-width:100%;display:block}
   .process-card h2{font-size:1rem}
   .container{padding:0 14px}
 }
+
+/* ── Mobile carousels ── */
+@media(max-width:640px){
+  /* Shared carousel base */
+  .home-category-grid,
+  .home-industries-grid,
+  .subcategory-product-grid{
+    display:flex!important;
+    flex-direction:row!important;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    gap:12px!important;
+    padding-bottom:12px;
+    /* negative margin trick so cards reach screen edges */
+    margin-left:-16px!important;
+    margin-right:-16px!important;
+    padding-left:16px!important;
+    padding-right:16px!important;
+    /* hide scrollbar */
+    scrollbar-width:none;
+  }
+  .home-category-grid::-webkit-scrollbar,
+  .home-industries-grid::-webkit-scrollbar,
+  .subcategory-product-grid::-webkit-scrollbar{display:none}
+
+  /* Cards inside carousels */
+  .home-category-grid > *,
+  .home-industries-grid > *,
+  .subcategory-product-grid > *{
+    flex:0 0 78vw;
+    max-width:300px;
+    scroll-snap-align:start;
+    min-height:auto!important;
+  }
+
+  /* Peek indicator — last card slightly visible */
+  .home-category-grid > *:last-child,
+  .home-industries-grid > *:last-child,
+  .subcategory-product-grid > *:last-child{
+    margin-right:16px;
+  }
+
+  /* Industry cards: a bit narrower since content is short */
+  .home-industries-grid > *{
+    flex:0 0 68vw;
+  }
+
+  /* Product cards in carousel: full-height flex */
+  .subcategory-product-grid .product-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+}
