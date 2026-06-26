@@ -518,6 +518,52 @@ function setupLogoCarouselPause(){
   }, { passive: true });
 }
 
+function setupScrollReveal() {
+  const targets = [
+    '.section-title',
+    '.section-copy',
+    '.eyebrow',
+    '.category-card',
+    '.product-card',
+    '.subcategory-card',
+    '.process-card',
+    '.teal-card',
+    '.industry-card',
+    '.product-info-card',
+    '.product-feature-card',
+    '.product-doc-buttons',
+    '.about-stat-pill',
+    '.cta',
+    '.split > div',
+    '.hero-grid > div',
+    '.btn-row',
+    '.subcat-pill-grid',
+    '.breadcrumb',
+    '.product-visual',
+    '.product-function',
+  ];
+
+  const elements = document.querySelectorAll(targets.join(','));
+  elements.forEach((el, i) => {
+    el.classList.add('reveal');
+    // stagger siblings inside grid/flex parents
+    const siblings = el.parentElement ? [...el.parentElement.children].filter(c => c.classList.contains(el.classList[0])) : [];
+    const idx = siblings.indexOf(el);
+    if (idx > 0 && idx < 5) el.classList.add(`reveal-delay-${idx}`);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  elements.forEach(el => observer.observe(el));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderHeader();
   setupMobileNavigation();
@@ -529,4 +575,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setupQuoteForm();
   setupLinkedInButton();
   setupLogoCarouselPause();
+  setupScrollReveal();
 });
