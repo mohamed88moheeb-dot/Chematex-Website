@@ -823,12 +823,12 @@ img{max-width:100%;display:block}
   border: 3px solid transparent;
   background-image:
     radial-gradient(circle at 18% 16%, rgba(255,255,255,0.16), transparent 28%),
-    radial-gradient(circle at 82% 18%, rgba(245,190,66,0.14), transparent 22%),
+    radial-gradient(circle at 82% 18%, rgba(255,255,255,0.08), transparent 22%),
     linear-gradient(135deg, #365d63 0%, #173847 48%, #08111f 100%),
     conic-gradient(
       from var(--pill-angle),
-      rgba(71,111,117,0.9), rgba(120,165,71,0.9), rgba(245,190,66,0.85),
-      rgba(223,113,76,0.85), rgba(192,57,43,0.85), rgba(71,111,117,0.9)
+      rgba(255,255,255,0.12), rgba(255,255,255,0.65), rgba(255,255,255,0.95),
+      rgba(255,255,255,0.65), rgba(255,255,255,0.12), rgba(255,255,255,0.12)
     );
   background-origin: padding-box, padding-box, padding-box, border-box;
   background-clip: padding-box, padding-box, padding-box, border-box;
@@ -2339,6 +2339,18 @@ img{max-width:100%;display:block}
 /* =========================
    Mobile Hero — Liquid Glass
    ========================= */
+
+/* Hero explore button matches category card gradient */
+.hero-explore-btn {
+  background: linear-gradient(135deg, #365d63 0%, #173847 48%, #08111f 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 12px 24px rgba(8, 17, 31, 0.22) !important;
+}
+.hero-explore-btn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
 
 /* Hidden on desktop — only activated inside the mobile media query */
 .hero-bg-image,
