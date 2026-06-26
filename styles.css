@@ -1295,6 +1295,14 @@ img{max-width:100%;display:block}
   color: #ffffff;
 }
 
+.mobile-slide-cue {
+  display: none;
+}
+
+.support-carousel-wrap {
+  min-width: 0;
+}
+
 /* Mobile collapsible Categories menu */
 .mobile-dropdown-toggle {
   width: 100%;
@@ -2157,9 +2165,18 @@ img{max-width:100%;display:block}
 
 /* ── Mobile carousels ── */
 @media(max-width:640px){
+  .support-carousel-wrap{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow:hidden;
+  }
+
   /* Shared carousel base */
   .home-category-grid,
   .home-industries-grid,
+  .industry-carousel-grid,
+  .support-carousel-grid,
   .subcategory-product-grid{
     display:flex!important;
     flex-direction:row!important;
@@ -2179,11 +2196,15 @@ img{max-width:100%;display:block}
   }
   .home-category-grid::-webkit-scrollbar,
   .home-industries-grid::-webkit-scrollbar,
+  .industry-carousel-grid::-webkit-scrollbar,
+  .support-carousel-grid::-webkit-scrollbar,
   .subcategory-product-grid::-webkit-scrollbar{display:none}
 
   /* Cards inside carousels */
   .home-category-grid > *,
   .home-industries-grid > *,
+  .industry-carousel-grid > *,
+  .support-carousel-grid > *,
   .subcategory-product-grid > *{
     flex:0 0 78vw;
     max-width:300px;
@@ -2194,6 +2215,8 @@ img{max-width:100%;display:block}
   /* Peek indicator — last card slightly visible */
   .home-category-grid > *:last-child,
   .home-industries-grid > *:last-child,
+  .industry-carousel-grid > *:last-child,
+  .support-carousel-grid > *:last-child,
   .subcategory-product-grid > *:last-child{
     margin-right:16px;
   }
@@ -2201,6 +2224,55 @@ img{max-width:100%;display:block}
   /* Industry cards: a bit narrower since content is short */
   .home-industries-grid > *{
     flex:0 0 68vw;
+  }
+
+  .industry-carousel-grid > *{
+    flex:0 0 82vw;
+    max-width:360px;
+  }
+
+  .support-carousel-grid > *{
+    flex:0 0 82vw;
+    max-width:360px;
+  }
+
+  .support-carousel-grid .card{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-height:190px;
+  }
+
+  .mobile-slide-cue{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    width:fit-content;
+    margin:10px auto 0;
+    padding:7px 12px;
+    border:1px solid rgba(71,111,117,.18);
+    border-radius:999px;
+    background:rgba(255,255,255,.76);
+    box-shadow:0 8px 22px rgba(15,23,42,.06);
+  }
+
+  .mobile-slide-cue span{
+    width:7px;
+    height:7px;
+    border-radius:999px;
+    background:rgba(71,111,117,.42);
+  }
+
+  .mobile-slide-cue span:last-child{
+    width:18px;
+    background:linear-gradient(90deg,var(--teal),var(--orange));
+    animation:slide-cue-pulse 1.35s ease-in-out infinite;
+  }
+
+  @keyframes slide-cue-pulse{
+    0%,100%{transform:translateX(0);opacity:.68}
+    50%{transform:translateX(5px);opacity:1}
   }
 
   /* Product cards in carousel: full-height flex, titles always one line */
