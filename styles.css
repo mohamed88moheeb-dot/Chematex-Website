@@ -2349,13 +2349,16 @@ img{max-width:100%;display:block}
 @media (max-width: 768px) {
   .hero {
     position: relative;
-    min-height: 100dvh !important;
+    height: calc(100dvh - 72px) !important;
+    min-height: unset !important;
     background: none !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    padding-top: 58vh !important;
-    padding-bottom: 36px !important;
+    justify-content: flex-end !important;
+    padding-top: 0 !important;
+    padding-bottom: 18px !important;
+    overflow: hidden !important;
   }
 
   .hero::before {
@@ -2404,26 +2407,31 @@ img{max-width:100%;display:block}
     box-shadow: none;
   }
 
+  .hero-glass-card .btn {
+    padding: 11px 18px !important;
+    min-height: 44px !important;
+  }
+
   .hero-glass-card h1 {
     color: #ffffff !important;
     font-size: 1.45rem !important;
     line-height: 1.1 !important;
     letter-spacing: -0.03em !important;
     white-space: nowrap !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
   }
 
   .hero-glass-card p {
     color: rgba(255, 255, 255, 0.85) !important;
-    font-size: 0.88rem !important;
-    line-height: 1.58 !important;
-    margin: 0 0 18px !important;
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+    margin: 0 0 14px !important;
     max-width: 100% !important;
   }
 
   .hero-glass-card .btn-row {
     flex-direction: column !important;
-    gap: 10px !important;
+    gap: 8px !important;
     width: 100% !important;
   }
 
