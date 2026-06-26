@@ -2424,6 +2424,111 @@ img{max-width:100%;display:block}
   transform: translateY(-2px);
 }
 
+/* About page responsive card strips */
+.about-guides-carousel {
+  display: flex !important;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 6px 6px 18px;
+  margin-left: -6px;
+  margin-right: -6px;
+  scrollbar-width: none;
+}
+
+.about-guides-carousel::-webkit-scrollbar,
+.about-principles-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.about-guides-carousel .card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 260px;
+  scroll-snap-align: start;
+}
+
+.desktop-slide-cue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: fit-content;
+  margin: 12px auto 0;
+  padding: 7px 12px;
+  border: 1px solid rgba(71,111,117,.18);
+  border-radius: 999px;
+  background: rgba(255,255,255,.76);
+  box-shadow: 0 8px 22px rgba(15,23,42,.06);
+}
+
+.desktop-slide-cue span {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(71,111,117,.42);
+}
+
+.desktop-slide-cue span:last-child {
+  width: 18px;
+  background: linear-gradient(90deg,var(--teal),var(--orange));
+  animation: slide-cue-pulse 1.35s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .about-hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin-top: 32px !important;
+  }
+
+  .about-hero-stats .stat {
+    border-radius: 14px !important;
+    padding: 12px 6px !important;
+    min-width: 0;
+  }
+
+  .about-hero-stats .stat strong {
+    font-size: clamp(1.05rem, 5vw, 1.38rem);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .about-hero-stats .stat span {
+    font-size: clamp(.58rem, 2.7vw, .7rem);
+    line-height: 1.2;
+    margin-top: 5px;
+  }
+
+  .about-principles-carousel {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 14px !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 4px 20px 16px;
+    margin-left: -20px;
+    margin-right: -20px;
+    scrollbar-width: none;
+  }
+
+  .about-principles-carousel .card,
+  .about-guides-carousel .card {
+    flex: 0 0 min(82vw, 340px);
+    scroll-snap-align: start;
+  }
+
+  .about-guides-carousel {
+    gap: 14px !important;
+    padding: 4px 20px 16px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
 /* Hidden on desktop — only activated inside the mobile media query */
 .hero-bg-image,
 .hero-bg-overlay {
