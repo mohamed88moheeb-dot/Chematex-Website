@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The catalogue — Meridian</title>
+<meta name="description" content="All Meridian routes, filterable by region, terrain, grade, season and price.">
+<link rel="stylesheet" href="assets/css/meridian.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark__name plate-caps">Meridian</span>
+      <span class="wordmark__span" data-span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="trips.html">All routes</a>
+      <a href="index.html#regions">Regions</a>
+      <a href="about.html">How we run</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section section--tight shell">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">The catalogue</span>
+        <h2><span data-count></span> routes, <span id="span-note"></span></h2>
+      </div>
+      <p>Plates are numbered in the order the routes were added. Grade runs from
+         one — short days on good paths — to five, where there is no quick way off.</p>
+    </div>
+
+    <div class="catalogue">
+      <form class="rail" id="filters" aria-label="Filter routes">
+        <label class="field">
+          <span>Search</span>
+          <input class="input" type="search" name="q" id="q" placeholder="Name, country, terrain">
+        </label>
+
+        <fieldset class="rail__group" style="border:0;padding:0 0 1.1rem;margin:0 0 1.1rem;border-bottom:1px solid var(--ink-14)">
+          <legend class="eyebrow rail__legend">Region</legend>
+          <div id="f-region"></div>
+        </fieldset>
+
+        <fieldset class="rail__group" style="border:0;padding:0 0 1.1rem;margin:0 0 1.1rem;border-bottom:1px solid var(--ink-14)">
+          <legend class="eyebrow rail__legend">Terrain</legend>
+          <div id="f-terrain"></div>
+        </fieldset>
+
+        <fieldset class="rail__group" style="border:0;padding:0 0 1.1rem;margin:0 0 1.1rem;border-bottom:1px solid var(--ink-14)">
+          <legend class="eyebrow rail__legend">Grade</legend>
+          <div id="f-grade"></div>
+        </fieldset>
+
+        <label class="field">
+          <span>Running in</span>
+          <select class="input" name="month" id="month">
+            <option value="">Any month</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Price up to</span>
+          <select class="input" name="price" id="price">
+            <option value="">Any price</option>
+            <option value="2500">$2,500</option>
+            <option value="3500">$3,500</option>
+            <option value="5000">$5,000</option>
+            <option value="7500">$7,500</option>
+          </select>
+        </label>
+
+        <button type="button" class="btn btn--ghost btn--wide" id="clear">Clear filters</button>
+      </form>
+
+      <div>
+        <div class="catalogue__bar" id="filters-anchor">
+          <p class="result-count"><b id="count">0</b> of <span data-count></span> routes</p>
+          <div class="sort">
+            <label class="eyebrow" for="sort">Sort</label>
+            <select id="sort">
+              <option value="departure">Next departure</option>
+              <option value="price-asc">Price, low to high</option>
+              <option value="price-desc">Price, high to low</option>
+              <option value="days">Duration</option>
+              <option value="grade">Grade</option>
+              <option value="lat">Latitude, north to south</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="plate-grid" id="results"></div>
+
+        <div class="empty" id="empty" hidden>
+          <h3>Nothing matches that combination</h3>
+          <p>Try widening the season or the price ceiling — most routes run in a narrow window.</p>
+          <button class="btn btn--ghost" type="button" id="clear-2">Clear filters</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__grid">
+      <div>
+        <span class="plate-caps" style="color:var(--chart);font-size:1.05rem">Meridian</span>
+        <p style="margin-top:.75rem;max-width:32ch;font-size:.9375rem">
+          Guided routes across six regions. Registered in Edinburgh, bonded through
+          the Travel Trust Association.
+        </p>
+      </div>
+      <div>
+        <h4>Catalogue</h4>
+        <ul>
+          <li><a href="trips.html">All routes</a></li>
+          <li><a href="index.html#regions">By region</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">How we run</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Booking</h4>
+        <ul>
+          <li><a href="about.html#terms">Deposits and refunds</a></li>
+          <li><a href="contact.html">Talk to us first</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© <span data-year></span> Meridian Routes Ltd — prototype</span>
+      <span data-span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/chart.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/catalogue.js"></script>
+</body>
+</html>

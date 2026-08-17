@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Route — Meridian</title>
+<meta name="description" content="Route detail: day-by-day itinerary, elevation profile, departures and what the price includes.">
+<link rel="stylesheet" href="assets/css/meridian.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark__name plate-caps">Meridian</span>
+      <span class="wordmark__span" data-span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="trips.html">All routes</a>
+      <a href="index.html#regions">Regions</a>
+      <a href="about.html">How we run</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div id="trip-root"></div>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__grid">
+      <div>
+        <span class="plate-caps" style="color:var(--chart);font-size:1.05rem">Meridian</span>
+        <p style="margin-top:.75rem;max-width:32ch;font-size:.9375rem">
+          Guided routes across six regions. Registered in Edinburgh, bonded through
+          the Travel Trust Association.
+        </p>
+      </div>
+      <div>
+        <h4>Catalogue</h4>
+        <ul>
+          <li><a href="trips.html">All routes</a></li>
+          <li><a href="index.html#regions">By region</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">How we run</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Booking</h4>
+        <ul>
+          <li><a href="about.html#terms">Deposits and refunds</a></li>
+          <li><a href="contact.html">Talk to us first</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© <span data-year></span> Meridian Routes Ltd — prototype</span>
+      <span data-span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/chart.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/trip.js"></script>
+</body>
+</html>

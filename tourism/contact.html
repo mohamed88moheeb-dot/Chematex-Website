@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Meridian</title>
+<meta name="description" content="Ask about a route, join a waitlist, or talk to the guide who runs it.">
+<link rel="stylesheet" href="assets/css/meridian.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark__name plate-caps">Meridian</span>
+      <span class="wordmark__span" data-span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="trips.html">All routes</a>
+      <a href="index.html#regions">Regions</a>
+      <a href="about.html">How we run</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section shell">
+    <div class="split" style="align-items:start">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h1 style="max-width:14ch;margin:.9rem 0 1.5rem">Ask the person who runs the route.</h1>
+        <p class="lede" style="max-width:46ch">
+          Pick the route and your question goes to its lead guide, not to a shared
+          inbox. Most answers come back the same day; from Svalbard in season it can
+          take three.
+        </p>
+
+        <dl class="spec" style="margin-top:2.5rem">
+          <div><dt>Email</dt><dd>routes@meridian.example</dd></div>
+          <div><dt>Phone</dt><dd>+44 131 496 0114</dd></div>
+          <div><dt>Hours</dt><dd>Mon–Sat, 08:00–18:00 UK</dd></div>
+          <div><dt>Office</dt><dd>12 Bernard Street, Edinburgh EH6 6PR</dd></div>
+        </dl>
+      </div>
+
+      <div>
+        <form id="enquiry" novalidate>
+          <label class="field">
+            <span>About which route</span>
+            <select class="input" name="trip" id="trip-select">
+              <option value="">Not about a specific route</option>
+            </select>
+          </label>
+          <div class="field-row">
+            <label class="field">
+              <span>Your name</span>
+              <input class="input" name="name" autocomplete="name">
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input class="input" name="email" type="email" autocomplete="email">
+            </label>
+          </div>
+          <label class="field">
+            <span>What would you like to know</span>
+            <textarea class="input" name="message" placeholder="Fitness, weather, whether the June date is really full — anything."></textarea>
+          </label>
+          <button class="btn btn--signal btn--wide" type="submit">Send question</button>
+          <p style="margin:.9rem 0 0;font-size:.875rem;color:var(--ink-70)">
+            Prototype: nothing is sent. The form validates and confirms locally.
+          </p>
+        </form>
+
+        <div id="sent" hidden>
+          <div class="receipt">
+            <div class="receipt__head">
+              <span class="eyebrow" style="color:rgba(231,237,238,.55)">Question logged</span>
+              <div class="receipt__ref" id="sent-ref"></div>
+            </div>
+            <div class="receipt__body">
+              <p id="sent-note" style="color:var(--ink-70);margin:0"></p>
+              <a class="btn btn--ghost" href="trips.html" style="margin-top:1.25rem">Back to the catalogue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__base" style="margin-top:0;border-top:0">
+      <span>© <span data-year></span> Meridian Routes Ltd — prototype</span>
+      <span data-span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/chart.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const select = document.getElementById('trip-select');
+  [...TRIPS].sort((a, b) => a.name.localeCompare(b.name)).forEach(t => {
+    select.insertAdjacentHTML('beforeend',
+      `<option value="${t.slug}">Plate ${t.plate} — ${t.name}</option>`);
+  });
+
+  const preset = new URLSearchParams(location.search).get('trip');
+  if (preset && tripBySlug(preset)) select.value = preset;
+
+  const form = document.getElementById('enquiry');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const problems = {};
+    const name = form.elements.name.value.trim();
+    const email = form.elements.email.value.trim();
+    const message = form.elements.message.value.trim();
+    if (!name) problems.name = 'We need a name to reply to.';
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) problems.email = 'Check the email address.';
+    if (message.length < 10) problems.message = 'A sentence or two, so the guide knows what to answer.';
+
+    form.querySelectorAll('.error').forEach(n => n.remove());
+    form.querySelectorAll('[aria-invalid]').forEach(n => n.removeAttribute('aria-invalid'));
+
+    const keys = Object.keys(problems);
+    if (keys.length) {
+      keys.forEach(k => {
+        const field = form.elements[k];
+        field.setAttribute('aria-invalid', 'true');
+        field.insertAdjacentHTML('afterend', `<span class="error">${problems[k]}</span>`);
+      });
+      form.elements[keys[0]].focus();
+      return;
+    }
+
+    const trip = tripBySlug(select.value);
+    document.getElementById('sent-ref').textContent =
+      'Q-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+    document.getElementById('sent-note').textContent = trip
+      ? `Sent to the lead guide for ${trip.name}. Replies usually land within a day.`
+      : 'Sent to the Edinburgh office. Replies usually land within a day.';
+    form.hidden = true;
+    document.getElementById('sent').hidden = false;
+  });
+});
+</script>
+</body>
+</html>
