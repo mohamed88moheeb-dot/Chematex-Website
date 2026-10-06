@@ -1,283 +1,259 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request a Chemical Quote | Chematex</title>
-  <meta name="description" content="Contact Chematex in Cairo, Egypt to request a product quote, sample, availability details, or technical support for chemical solutions." />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Chematex" />
-  <meta property="og:title" content="Request a Chemical Quote | Chematex" />
-  <meta property="og:description" content="Contact Chematex in Cairo, Egypt to request a product quote, sample, availability details, or technical support for chemical solutions." />
-  <meta property="og:url" content="https://chematex.net/contact.html" />
-  <meta property="og:image" content="https://chematex.net/assets/images/chematex-factory-front-with-logo.png" />
-  <meta property="og:image:width" content="1122" />
-  <meta property="og:image:height" content="1402" />
-  <meta property="og:image:alt" content="Chematex building front" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Request a Chemical Quote | Chematex" />
-  <meta name="twitter:description" content="Contact Chematex in Cairo, Egypt to request a product quote, sample, availability details, or technical support for chemical solutions." />
-  <meta name="twitter:image" content="https://chematex.net/assets/images/chematex-factory-front-with-logo.png" />
-  <link rel="image_src" href="https://chematex.net/assets/images/chematex-factory-front-with-logo.png" />
-  <link rel="icon" href="/favicon.ico" sizes="48x48" />
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="canonical" href="https://chematex.net/contact.html" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a quote - Chematex</title>
+<meta name="description" content="Request a quote, sample, technical data sheet or safety data sheet from Chematex, or contact our team in New Cairo directly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=20261006-r6">
+<link rel="icon" href="assets/img/chematex-lotus.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+.page-hero{padding-bottom:40px}
+.reply{display:flex;gap:8px;flex-wrap:wrap}
+.reply label{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 16px;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-size:14px;font-weight:500;transition:all .2s;font-family:var(--body);letter-spacing:0;text-transform:none;color:var(--text)}
+.reply input{position:absolute;opacity:0;pointer-events:none}
+.reply label:has(input:checked){background:var(--ink);border-color:var(--ink);color:var(--white)}
+.reply label:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:2px}
+.summary{margin:24px auto 0;max-width:460px;text-align:left;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.summary div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:10px 16px;border-top:1px solid var(--line);font-size:14px}
+.summary div:first-child{border-top:0}
+.summary span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.done-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.demo-note{margin-top:18px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.prefill{display:flex;align-items:center;gap:10px;margin-top:18px;padding:12px 14px;border-radius:10px;background:var(--mist);font-size:14px}
+.prefill svg{width:18px;height:18px;color:var(--teal);flex:0 0 auto}
+.contact-sec{padding-top:48px}
+@media (min-width:761px){
+  .page-hero{padding:calc(var(--header-h) + clamp(14px,2.6vh,28px)) 0 clamp(18px,3vh,32px)}
+  .page-hero .crumbs{margin-bottom:clamp(8px,1.6vh,14px)}
+  .page-hero-grid{align-items:center;gap:32px}
+  .page-hero h1{font-size:clamp(2rem,min(3.6vw,6vh),3.2rem);line-height:1.04}
+  .page-hero .lede{margin-top:0;font-size:15.5px}
+  .contact-sec{padding-top:clamp(20px,3.4vh,36px)}
+}
+.field-row{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media (max-width:760px){.field-row{gap:10px}}
+.pf-type{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding:4px 8px;border-radius:6px;background:var(--ink);color:var(--gold-2)}
+.prefill{flex-wrap:wrap}
+@media (max-width:760px){
+  .page-hero{padding:calc(var(--header-h) + 12px) 0 10px}
+  .page-hero-grid{gap:0}
+  .page-hero h1{font-size:clamp(1.6rem,7.4vw,2rem);line-height:1.04}
+  .page-hero .lede{display:none}
+  .contact-sec{padding-top:16px;padding-bottom:28px}
+  .stepper{padding:16px;border-radius:18px}
+  .steps-view{margin-top:12px}
+  .step h2{font-size:1.25rem}
+  .step > p{font-size:14px;margin-top:4px}
+  .prefill{margin-top:12px;padding:10px 12px;font-size:13.5px}
+  .choice-grid{gap:8px!important;margin-top:12px!important}
+  .choice{flex-direction:row!important;align-items:center;gap:10px!important;padding:11px 12px!important;min-height:54px}
+  .choice svg{width:22px;height:22px}
+  .choice b{font-size:14px;line-height:1.2}
+  .fields{gap:12px;margin-top:14px}
+  .field input,.field select{height:46px}
+  .field textarea{min-height:96px}
+  .step-foot{margin-top:16px;padding-top:14px}
+  .step-foot .btn{height:46px}
+  .direct{margin-top:6px}
+}
+</style>
 </head>
-
 <body data-page="contact">
-  <div id="site-header"></div>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/shots.js"></script>
+<script src="assets/js/groups.js"></script>
+<script src="assets/js/i18n.js?v=20261006-r6"></script>
+<script src="assets/js/site.js?v=20261006-r6"></script>
 
-  <main>
-    <section class="page-hero">
-      <div class="container contact-grid">
-        <div>
-          <div class="eyebrow">Chematex product support</div>
-          <h1 class="section-title">Request a Quote, Sample, or Technical Support</h1>
-          <p class="section-copy">Contact Chematex in Cairo, Egypt for product availability, samples, quotations, and technical support for your chemical supply requirements.</p>
-
-          <div class="contact-info" style="margin-top:28px">
-
-            <div class="contact-card">
-              <div class="icon">☎</div>
-              <div>
-                <b>Call Us</b>
-          
-                <div class="phone-links">
-                  <a class="phone-link" href="tel:+201005430909">01005430909</a>
-                  <span class="phone-separator">|</span>
-          
-                  <a class="phone-link" href="tel:+201026622321">01026622321</a>
-                  <span class="phone-separator">|</span>
-          
-                  <a class="phone-link" href="tel:+20225734582">0225734582</a>
-                </div>
-              </div>
-            </div>
-
-           <a 
-            class="contact-card contact-card-link" 
-            href="mailto:chematex.gp@gmail.com">
-            <div class="icon">@</div>
-            <div>
-              <b>Email Us</b>
-              <span>chematex.gp@gmail.com</span>
-            </div>
-          </a>
-            
-          <a 
-            class="contact-card contact-card-link" 
-            href="https://www.google.com/maps/search/?api=1&query=Chematex%20COMPANY%20Textile%20Auxiliaries%20Detergents%20Cosmetics%20Factory" 
-            target="_blank" 
-            rel="noopener">
-            <div class="icon">⌖</div>
-            <div>
-              <b>Visit Us</b>
-              <span>Industrial Area, New Cairo 3, Cairo Governorate 4716015, Egypt</span>
-            </div>
-          </a>
-
-            <div class="contact-card">
-              <div class="icon">◷</div>
-              <div>
-                <b>Working Hours</b>
-                <span>Saturday to Thursday: 08:00 AM – 05:00 PM</span>
-                <span>Friday: Closed</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-card" id="inquiry">
-          <h2 style="color:var(--navy);margin-bottom:18px">Send a Chemical Inquiry</h2>
-
-          <form id="inquiryForm" name="inquiryForm">
-            <div class="form-grid">
-              <div class="field">
-                <label for="inquiryName">Name</label>
-                <input id="inquiryName" name="name" required type="text" placeholder="Your name">
-              </div>
-
-              <div class="field">
-                <label for="inquiryEmail">Email</label>
-                <input id="inquiryEmail" name="email" required type="email" placeholder="name@company.com">
-              </div>
-
-              <div class="field">
-                <label for="inquiryPhone">Phone</label>
-                <input id="inquiryPhone" name="phone" type="tel" placeholder="Phone number">
-              </div>
-
-              <div class="field">
-                <label for="inquiryCompany">Company Name</label>
-                <input id="inquiryCompany" name="company" type="text" placeholder="Company name">
-              </div>
-
-              <div class="field">
-                <label for="inquiryCompanyField">Company Field</label>
-                <input id="inquiryCompanyField" name="companyField" type="text" placeholder="Industry / field">
-              </div>
-
-              <div class="field">
-                <label for="inquiryType">Inquiry Type</label>
-                <select id="inquiryType" name="inquiryType">
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Request a Quote">Request a Quote</option>
-                  <option value="Request a Sample">Request a Sample</option>
-                  <option value="Product Information">Product Information</option>
-                  <option value="Technical Support">Technical Support</option>
-                </select>
-              </div>
-
-              <div class="field full">
-                <label for="inquiryMessage">Message</label>
-                <textarea id="inquiryMessage" name="message" required placeholder="Tell us what you need..."></textarea>
-              </div>
-            </div>
-
-            <button class="btn btn-primary" style="margin-top:20px" type="submit">Send Inquiry</button>
-            <p class="form-note" aria-live="polite"></p>
-          </form>
-        </div>
+<main id="main">
+  <section class="page-hero mist">
+    <div class="wrap">
+      <div class="crumbs" data-hero-reveal="fade"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+      <div class="page-hero-grid">
+        <h1 class="display d-l" data-split data-split-now>Request a quote, sample or data sheet.</h1>
+        <p class="lede" data-hero-reveal style="--d:.35s">Tell us what you need in three short steps. A Chematex specialist replies with recommendations, availability and pricing. Prefer to talk? Call or message us directly.</p>
       </div>
-    </section>
-
-<section class="section bg-soft" id="quote">
-  <div class="container">
-    <div class="center narrow container">
-      <div class="eyebrow">Samples & quotations</div>
-      <h2 class="section-title">Request a Product Quote or Sample</h2>
-      <p class="section-copy">Share your product and application requirements, and Chematex will follow up with availability, sample options, technical support, or quotation details.</p>
     </div>
+  </section>
 
-    <div class="form-card" style="max-width:900px;margin:36px auto 0">
-      <form id="quoteForm" name="quoteForm">
-        <div class="form-grid">
-          <div class="field">
-            <label for="quoteName">Name</label>
-            <input id="quoteName" name="name" required type="text">
-          </div>
-
-          <div class="field">
-            <label for="quoteJobTitle">Job Title</label>
-            <input id="quoteJobTitle" name="jobTitle" type="text">
-          </div>
-
-          <div class="field">
-            <label for="quoteCompany">Company Name</label>
-            <input id="quoteCompany" name="company" type="text">
-          </div>
-
-          <div class="field">
-            <label for="quoteCompanyField">Company Field</label>
-            <input id="quoteCompanyField" name="companyField" type="text">
-          </div>
-
-          <div class="field">
-            <label for="quoteMobile">Mobile Number</label>
-            <input id="quoteMobile" name="mobile" type="tel">
-          </div>
-
-          <div class="field">
-            <label for="quoteWhatsapp">WhatsApp Number</label>
-            <input id="quoteWhatsapp" name="whatsapp" type="tel">
-          </div>
-
-          <div class="field">
-            <label for="quoteEmail">Email</label>
-            <input id="quoteEmail" name="email" required type="email">
-          </div>
-
-          <div class="field">
-            <label for="quoteCategory">Product Category</label>
-            <select id="quoteCategory" name="category" required>
-              <option value="">Select Product Category</option>
-              <option value="Textile Auxiliaries">Textile Auxiliaries</option>
-              <option value="Household Detergents & Cleaners">Household Detergents &amp; Cleaners</option>
-              <option value="Cosmetics & Personal Care">Cosmetics & Personal Care</option>
-              <option value="RO Water Treatment">RO Water Treatment</option>
-              <option value="Sanitizers & Disinfectants">Sanitizers & Disinfectants</option>
-              <option value="Raw Materials">Raw Materials</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="quoteProduct">Product</label>
-            <select id="quoteProduct" name="product" required>
-              <option value="">Select a category first</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="quoteQuantity">Quantity</label>
-            <select id="quoteQuantity" name="quantity" required>
-              <option value="">Select Quantity</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="quotePackaging">Packaging</label>
-            <select id="quotePackaging" name="packaging" required>
-              <option value="">Select a product first</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="quoteCompanyAddress">Company Address</label>
-            <input id="quoteCompanyAddress" name="companyAddress" type="text">
+  <section class="section contact-sec">
+    <div class="wrap contact-grid">
+      <form class="stepper" id="rfq" novalidate data-reveal>
+        <div class="step-head"><span class="label" id="stepLabel">Step 1 of 3</span><div class="step-bar" aria-hidden="true"><i class="on"></i><i></i><i></i></div></div>
+        <div id="prefill"></div>
+        <div class="steps-view">
+          <fieldset class="step is-active" data-step="1" style="border:0">
+            <legend class="sr-only">What do you need?</legend>
+            <h2>What do you need?</h2><p>Choose one. You can add details in the next step.</p>
+            <div class="choice-grid" id="choices"></div>
+          </fieldset>
+          <fieldset class="step" data-step="2" style="border:0">
+            <legend class="sr-only">Product details</legend>
+            <h2>Tell us about the product</h2><p>Leave anything you're unsure about blank.</p>
+            <div class="fields">
+              <div class="field"><label for="fLine">Product line</label><select id="fLine" name="line"><option value="">Not sure yet</option></select></div>
+              <div class="field"><label for="fProduct">Product</label><input id="fProduct" name="product" list="productList" placeholder="Start typing a product name"><datalist id="productList"></datalist></div>
+              <div class="field-row">
+                <div class="field"><label for="fSize">Package / size</label><select id="fSize" name="size"><option value="">Not sure yet</option></select></div>
+                <div class="field"><label for="fQty">Quantity</label><input id="fQty" name="qty" placeholder="e.g. 4 per month"></div>
+              </div>
+              <div class="field full"><label for="fMsg">Application details</label><textarea id="fMsg" name="message" placeholder="Substrate, machine, process or the problem you're solving"></textarea></div>
+            </div>
+          </fieldset>
+          <fieldset class="step" data-step="3" style="border:0">
+            <legend class="sr-only">Your details</legend>
+            <h2>Where should we reply?</h2><p>We only use these details to answer your request.</p>
+            <div class="fields">
+              <div class="field"><label for="fName">Name</label><input id="fName" name="name" autocomplete="name" required><span class="err">Enter your name.</span></div>
+              <div class="field"><label for="fCompany">Company</label><input id="fCompany" name="company" autocomplete="organization"></div>
+              <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email" required><span class="err">Enter an email address such as name@company.com.</span></div>
+              <div class="field"><label for="fPhone">Phone or WhatsApp</label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
+              <div class="field full"><span class="label" style="font-size:11px">Preferred reply</span>
+                <div class="reply" role="radiogroup" aria-label="Preferred reply">
+                  <label><input type="radio" name="reply" value="Email" checked>Email</label>
+                  <label><input type="radio" name="reply" value="Phone">Phone</label>
+                  <label><input type="radio" name="reply" value="WhatsApp">WhatsApp</label>
+                </div></div>
+            </div>
+          </fieldset>
+          <div class="step done" data-step="4" role="status">
+            <input type="text" name="website" id="fHp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
+            <svg class="tick-anim" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40"/><path d="M26 43l11 11 22-24"/></svg>
+            <h2 class="display d-m" id="doneTitle" style="color:var(--ink)">Sending your request…</h2>
+            <p id="doneText">One moment while we send it to the Chematex team.</p>
+            <div class="summary" id="summary"></div>
+            <div class="done-actions" id="doneActions" hidden><a class="btn btn-gold" id="sendWa" target="_blank" rel="noopener">Send by WhatsApp</a><a class="btn btn-ghost" id="sendMail">Send by email</a></div>
+            <p class="demo-note" id="doneNote" hidden></p>
           </div>
         </div>
-
-        <button class="btn btn-primary" style="margin-top:20px" type="submit">Send Request</button>
-        <p class="form-note" aria-live="polite"></p>
+        <div class="step-foot" id="stepFoot">
+          <button type="button" class="btn btn-ghost" id="back" hidden>Back</button>
+          <button type="button" class="btn btn-primary" id="next" style="margin-left:auto">Continue <svg class="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+        </div>
       </form>
+
+      <aside class="direct" data-stagger=".07" aria-label="Contact Chematex directly">
+        <a class="dcard" href="tel:+201005430909"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h4l1.5 4.5-2.3 1.4a11 11 0 0 0 6.4 6.4l1.4-2.3 4.5 1.5v4a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg></span><div><small>Call sales</small><b>+20 100 543 0909</b><span>Also +20 102 662 2321</span></div></a>
+        <a class="dcard" href="tel:+20225734582"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l5 3v-3l5 3v-3l5 3V4h3v17zM3 21h18"/></svg></span><div><small>Office line</small><b>+20 2 2573 4582</b></div></a>
+        <a class="dcard" href="https://wa.me/201005430909" target="_blank" rel="noopener"><span class="ico" style="color:#1FA855"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .8a5 5 0 0 1-2.7-2.7l.8-1-1-2z"/></svg></span><div><small>WhatsApp</small><b>Message us</b><span>Fastest for quick questions</span></div></a>
+        <a class="dcard" href="mailto:chematex.gp@gmail.com"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></svg></span><div><small>Email</small><b>chematex.gp@gmail.com</b></div></a>
+        <div class="map"><iframe title="Map showing the Chematex plant in New Cairo" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1100!2d31.482470699999993!3d29.9675305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14582482885f8afb%3A0xd1301d70b02da9de!2sChematex%20COMPANY%20Textile%20Auxiliaries%20%2C%20Detergents%20%26%20cosmetics%20Factory!5e0!3m2!1sen!2seg!4v1780792762564!5m2!1sen!2seg"></iframe></div>
+      </aside>
     </div>
-  </div>
-</section>
+  </section>
+</main>
+<div id="cx-footer"></div>
 
-    <section class="section">
-      <div class="container">
-        <div class="center narrow container">
-          <div class="eyebrow">Location</div>
-          <h2 class="section-title">Find Us on Google Maps</h2>
-          <p class="section-copy">Visit Chematex or open the location directly in Google Maps for directions.</p>
-        </div>
+<script>
+(function(){
+const {P, LINES, esc, icon} = CX;
+const TYPES = [
+  ['quote','quote','Request a quote','Pricing and availability'],
+  ['sample','beaker','Request a sample','For lab or bulk trials'],
+  ['tds','doc','Technical data sheet','TDS for a product'],
+  ['sds','shield','Safety data sheet','SDS for a product'],
+  ['advice','flask','Product recommendation','Tell us the application'],
+  ['other','chat','Something else','Any other question']
+];
+const form = document.getElementById('rfq');
+const F = n => form.elements[n];
+document.getElementById('choices').innerHTML = TYPES.map(([v,ic,t,d],i)=>`<label class="choice"><input type="radio" name="type" value="${v}"${i===0?' checked':''}>${icon(ic)}<div><b>${t}</b><span>${d}</span></div></label>`).join('');
+const lineSel = document.getElementById('fLine');
+lineSel.insertAdjacentHTML('beforeend', Object.keys(LINES).map(k=>`<option value="${k}">${esc(LINES[k].name)}</option>`).join(''));
+const dl = document.getElementById('productList');
+const fillList = () => { const l = lineSel.value; dl.innerHTML = P.filter(p=>!l||p.line===l).map(p=>`<option value="${esc(p.name)}">`).join(''); };
+/* Package / size follows the product: its own pack sizes, else the sizes of the chosen line, else every size we pack */
+const sizeSel = document.getElementById('fSize');
+const SIZE_ORDER = s => { const m = String(s).match(/([\d.]+)\s*(ml|L|kg)/i); if (!m) return 1e9; return ({ml:0, l:1000, kg:100000})[m[2].toLowerCase()] + parseFloat(m[1]); };
+const productByName = n => P.find(x => x.name.toLowerCase() === String(n || '').trim().toLowerCase());
+const sizesOf = pk => String(pk || '').split('/').map(x => x.trim()).filter(Boolean);
+function refreshSizes(want){
+  const keep = want || sizeSel.value, pm = productByName(F('product').value);
+  let list;
+  if (pm) list = sizesOf(pm.pack);
+  else list = [...new Set(P.filter(x => !lineSel.value || x.line === lineSel.value).flatMap(x => sizesOf(x.pack)))].sort((a, b) => SIZE_ORDER(a) - SIZE_ORDER(b));
+  sizeSel.innerHTML = `<option value="">${esc(CX.T(pm && list.length === 1 ? 'Pack size' : 'Not sure yet'))}</option>` + list.map(z => `<option value="${esc(z)}">${esc(CX.packSize ? CX.packSize(z) : z)}</option>`).join('');
+  if (list.includes(keep)) sizeSel.value = keep; else if (pm && list.length === 1) sizeSel.value = list[0];
+}
+lineSel.addEventListener('change', () => { fillList(); refreshSizes(); }); fillList();
+document.getElementById('fProduct').addEventListener('input', () => { const pm = productByName(F('product').value); if (pm && lineSel.value !== pm.line){ lineSel.value = pm.line; fillList(); } refreshSizes(); });
+document.getElementById('fProduct').addEventListener('change', () => refreshSizes());
+refreshSizes();
 
-        <div style="margin-top:34px">
-          <div class="map-embed">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.4139813971838!2d31.482470699999993!3d29.9675305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14582482885f8afb%3A0xd1301d70b02da9de!2sChematex%20COMPANY%20Textile%20Auxiliaries%20%2C%20Detergents%20%26%20cosmetics%20Factory!5e0!3m2!1sen!2seg!4v1780792762564!5m2!1sen!2seg" 
-              width="100%" 
-              height="420" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+/* Prefill from product pages and CTAs */
+const qs = new URLSearchParams(location.search);
+const t = qs.get('type'), prod = qs.get('product'), line = qs.get('line'), qty = qs.get('qty'), topic = qs.get('topic');
+if (t && TYPES.some(x=>x[0]===t)) form.querySelector(`input[name=type][value="${t}"]`).checked = true;
+if (line && LINES[line]){ lineSel.value = line; fillList(); }
+if (prod) F('product').value = prod;
+if (prod && !(line && LINES[line])){ const pm = P.find(x => x.name.toLowerCase() === prod.toLowerCase()); if (pm){ lineSel.value = pm.line; fillList(); } }
+if (qty) F('qty').value = qty;
+refreshSizes(qs.get('size') || '');
+if (topic === 'printing') F('message').value = CX.T('Printing auxiliaries: we print on … using … (pigment / reactive / disperse).');
+const typeRow = TYPES.find(x=>x[0]===t);
+if (prod) document.getElementById('prefill').innerHTML = `<div class="prefill">${icon('check')}${typeRow?`<em class="pf-type">${esc(CX.T(typeRow[2]))}</em>`:''}<span>We've added <b>${esc(prod)}</b>${qty?` and your quantity`:''} to this request.</span></div>`;
 
-          <div class="map-link-card">
-            <h3>Visit Chematex</h3>
-            <p>Chematex COMPANY Textile Auxiliaries, Detergents & Cosmetics Factory</p>
-            <a 
-              class="btn btn-primary" 
-              href="https://www.google.com/maps/search/?api=1&query=Chematex%20COMPANY%20Textile%20Auxiliaries%20Detergents%20Cosmetics%20Factory" 
-              target="_blank" 
-              rel="noopener">
-              Open in Google Maps
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div id="site-footer"></div>
-  <div id="whatsapp"></div>
-  <script src="script.js"></script>
+/* Stepper */
+let step = 1;
+const views = [...form.querySelectorAll('.step')], bars = [...form.querySelectorAll('.step-bar i')];
+const back = document.getElementById('back'), next = document.getElementById('next');
+function show(n, dir, quiet){
+  step = n;
+  views.forEach(v=>{ const on = +v.dataset.step===n; v.classList.toggle('is-active', on); v.classList.toggle('is-back', on && dir<0); });
+  bars.forEach((b,i)=>b.classList.toggle('on', i < Math.min(n,3)));
+  document.getElementById('stepLabel').textContent = n<4 ? `Step ${n} of 3` : 'Ready to send';
+  back.hidden = n===1 || n===4;
+  document.getElementById('stepFoot').hidden = n===4;
+  next.firstChild.textContent = n===3 ? 'Review request ' : 'Continue ';
+  if (quiet) return;
+  const h = views.find(v=>+v.dataset.step===n).querySelector('h2'); if (h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); }
+  if (form.getBoundingClientRect().top < 80) CX.scrollToEl(form, true);
+}
+function valid(){
+  if (step !== 3) return true;
+  let ok = true;
+  [['fName', v=>v.trim().length>1], ['fEmail', v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())]].forEach(([id,test])=>{
+    const el = document.getElementById(id), f = el.closest('.field'), good = test(el.value);
+    f.classList.toggle('invalid', !good); el.setAttribute('aria-invalid', !good);
+    if (!good && ok){ el.focus(); ok = false; }
+  });
+  return ok;
+}
+function summarise(){
+  const type = CX.T(TYPES.find(x=>x[0]===F('type').value)[2]);
+  const rows = [['Request',type],['Line',lineSel.value?LINES[lineSel.value].name:''],['Product',F('product').value],['Package / size',F('size').value],['Quantity',F('qty').value],['Details',F('message').value],['Name',F('name').value],['Company',F('company').value],['Email',F('email').value],['Phone',F('phone').value],['Reply by',F('reply').value]].filter(r=>r[1] && r[1].trim());
+  rows.forEach(r => r[0] = CX.T(r[0]));
+  document.getElementById('summary').innerHTML = rows.map(([k,v])=>`<div><span>${k}</span>${esc(v)}</div>`).join('');
+  const text = CX.T('Hello Chematex,') + '\n\n' + rows.map(([k,v])=>`${k}: ${v}`).join('\n');
+  document.getElementById('sendWa').href = 'https://wa.me/201005430909?text=' + encodeURIComponent(text);
+  document.getElementById('sendMail').href = 'mailto:chematex.gp@gmail.com?subject=' + encodeURIComponent(type + (F('product').value?': '+F('product').value:'')) + '&body=' + encodeURIComponent(text);
+}
+/* Arriving from a product page or a TDS / SDS / quote button: the request type and product are already chosen, so open on the details step */
+if (t && TYPES.some(x=>x[0]===t) && (prod || line)) show(2, 1, true);
+/* Sends the request to the Chematex inbox (Google Apps Script web app). Falls back to WhatsApp / email buttons if it can't. */
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyz6DgnxYAJ5cbd_43O9K5UoSi3SOx9HBOQTDb_NDvUgXkB1i7B5hn5JdwE3vXaFTJy9Q/exec';   // paste the Apps Script web app URL here
+async function sendRequest(){
+  const T = CX.T, title = document.getElementById('doneTitle'), text = document.getElementById('doneText'), acts = document.getElementById('doneActions'), note = document.getElementById('doneNote');
+  const body = {type: F('type').value, line: lineSel.value ? LINES[lineSel.value].name : '', product: F('product').value, size: F('size').value, qty: F('qty').value, message: F('message').value,
+    name: F('name').value, company: F('company').value, email: F('email').value, phone: F('phone').value, reply: F('reply').value, lang: CX.I18N.lang, page: location.href.split('?')[0], website: document.getElementById('fHp').value};
+  let ok = false;
+  if (FORM_ENDPOINT){
+    try { const r = await fetch(FORM_ENDPOINT, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'}, body: JSON.stringify(body)}); ok = r.ok && (await r.json()).ok; } catch (e) { ok = false; }
+  }
+  if (ok){ title.textContent = T('Request sent.'); text.textContent = T('Thank you. A Chematex specialist will reply by your preferred method. This is a copy of what we received.'); }
+  else { title.textContent = T('Your request is ready.'); text.textContent = T('We could not send it automatically. Send it by WhatsApp or email and it will reach the team straight away.'); acts.hidden = false; }
+}
+next.addEventListener('click', ()=>{ if (!valid()) return; if (step===3){ summarise(); show(4, 1); sendRequest(); return; } show(step+1, 1); });
+back.addEventListener('click', ()=>show(step-1, -1));
+form.addEventListener('submit', e=>{ e.preventDefault(); next.click(); });
+['fName','fEmail'].forEach(id=>document.getElementById(id).addEventListener('input', e=>{ const f=e.target.closest('.field'); if(f.classList.contains('invalid')) valid(); }));
+})();
+</script>
 </body>
 </html>

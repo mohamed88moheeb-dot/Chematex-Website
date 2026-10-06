@@ -1,0 +1,1026 @@
+{
+ "cleanUrls": false,
+ "redirects": [
+  {
+   "source": "/categories.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/category-cosmetics-personal-care.html",
+   "destination": "/products.html?line=care",
+   "permanent": true
+  },
+  {
+   "source": "/category-industrial-detergents.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/category-raw-materials.html",
+   "destination": "/products.html?line=raw",
+   "permanent": true
+  },
+  {
+   "source": "/category-ro-water-treatment.html",
+   "destination": "/products.html?line=water",
+   "permanent": true
+  },
+  {
+   "source": "/category-sanitizers-disinfectants.html",
+   "destination": "/products.html?line=sani",
+   "permanent": true
+  },
+  {
+   "source": "/category-textile-auxiliaries.html",
+   "destination": "/products.html?line=textile",
+   "permanent": true
+  },
+  {
+   "source": "/cosmetics-hand-wash.html",
+   "destination": "/products.html?line=care",
+   "permanent": true
+  },
+  {
+   "source": "/cosmetics-shampoo.html",
+   "destination": "/products.html?line=care",
+   "permanent": true
+  },
+  {
+   "source": "/cosmetics-shower-gel.html",
+   "destination": "/products.html?line=care",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-kitchen-all-purpose.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-kitchen-care.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-kitchen-degreasers.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-kitchen-descalers.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-kitchen-dishwashing.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-kitchen-heavy-duty.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-kitchen-presoak.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-kitchen-surface-polish.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-kitchen-ware-washing.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-laundry-alkali-agents.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-laundry-bleaching.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-laundry-buffers.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-laundry-care.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-laundry-fabric-softeners.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-laundry-stain-presoak.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-laundry-surfactants.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-room-air-fresheners.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-room-all-purpose.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-room-bathroom.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-room-carpet.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-room-furniture.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-room-glass-cleaners.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/detergents-room-surface-care.html",
+   "destination": "/products.html?line=home",
+   "permanent": true
+  },
+  {
+   "source": "/product-block-macro-silicon-lc-930-smooth-slippery-feeling.html",
+   "destination": "/product.html?p=block-macro-silicon-lc-930-smooth-slippery-feeling",
+   "permanent": true
+  },
+  {
+   "source": "/product-block-micro-silicon-lc-845-block-micro-silicon.html",
+   "destination": "/product.html?p=block-micro-silicon-lc-845-block-micro-silicon",
+   "permanent": true
+  },
+  {
+   "source": "/product-chema-boost.html",
+   "destination": "/product.html?p=chema-boost",
+   "permanent": true
+  },
+  {
+   "source": "/product-chema-bright.html",
+   "destination": "/product.html?p=chema-bright",
+   "permanent": true
+  },
+  {
+   "source": "/product-chema-buff.html",
+   "destination": "/product.html?p=chema-buff",
+   "permanent": true
+  },
+  {
+   "source": "/product-chema-chlorinz.html",
+   "destination": "/product.html?p=chema-chlorinz",
+   "permanent": true
+  },
+  {
+   "source": "/product-chema-sanitizer.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-chema-sant-g.html",
+   "destination": "/product.html?p=chema-sant-g",
+   "permanent": true
+  },
+  {
+   "source": "/product-chema-silk.html",
+   "destination": "/product.html?p=chema-silk",
+   "permanent": true
+  },
+  {
+   "source": "/product-chema-stain-extra.html",
+   "destination": "/product.html?p=chema-stain-extra",
+   "permanent": true
+  },
+  {
+   "source": "/product-chema-stril.html",
+   "destination": "/product.html?p=chema-stril",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemacare.html",
+   "destination": "/product.html?p=chemacare",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemacarp-foam.html",
+   "destination": "/product.html?p=chemacarp-foam",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemacarp.html",
+   "destination": "/product.html?p=chemacarp",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemacarrier-eco.html",
+   "destination": "/product.html?p=chemacarrier-eco",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemacarrier-ht-conc-high-temperature-carrier.html",
+   "destination": "/product.html?p=chemacarrier-ht-conc-high-temperature-carrier",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemacid-co-buffer-for-cotton.html",
+   "destination": "/product.html?p=chemacid-co-buffer-for-cotton",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemacid-red-conc-reduction-cleaning-agent.html",
+   "destination": "/product.html?p=chemacid-red-conc-reduction-cleaning-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemadeep-sil-541-deep-silicon.html",
+   "destination": "/product.html?p=chemadeep-sil-541-deep-silicon",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemadry.html",
+   "destination": "/product.html?p=chemadry",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemafix-rc-700-fixing-agent.html",
+   "destination": "/product.html?p=chemafix-rc-700-fixing-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemafoam-cm-100-antifoam-agent.html",
+   "destination": "/product.html?p=chemafoam-cm-100-antifoam-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemafoam-sy-150-antifoam-agent.html",
+   "destination": "/product.html?p=chemafoam-sy-150-antifoam-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemafresh.html",
+   "destination": "/product.html?p=chemafresh",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemagloss-ssd.html",
+   "destination": "/product.html?p=chemagloss-ssd",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemagloss-stl.html",
+   "destination": "/product.html?p=chemagloss-stl",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemagril-ultra.html",
+   "destination": "/product.html?p=chemagril-ultra",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemagurd-pfc-64-water-repellent.html",
+   "destination": "/product.html?p=chemagurd-pfc-64-water-repellent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemalev-lcr-945-leveling-dispersing-agent-for-polyester.html",
+   "destination": "/product.html?p=chemalev-lcr-945-leveling-dispersing-agent-for-polyester",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemalev-rl-leveling-and-washing-off-for-cotton.html",
+   "destination": "/product.html?p=chemalev-rl-leveling-and-washing-off-for-cotton",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemalev-rpd-999-rapid-temperature-leveling-agent-for-polyester.html",
+   "destination": "/product.html?p=chemalev-rpd-999-rapid-temperature-leveling-agent-for-polyester",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemalev-sh-500-leveling-dispersing-agent-for-polyester.html",
+   "destination": "/product.html?p=chemalev-sh-500-leveling-dispersing-agent-for-polyester",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemalime.html",
+   "destination": "/product.html?p=chemalime",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemaline-argan.html",
+   "destination": "/product.html?p=chemaline-argan",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemaline-cocoa.html",
+   "destination": "/product.html?p=chemaline-cocoa",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemaline-flowers.html",
+   "destination": "/product.html?p=chemaline-flowers",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemaline-oud.html",
+   "destination": "/product.html?p=chemaline-oud",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemaline-shea.html",
+   "destination": "/product.html?p=chemaline-shea",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemaquest-lp-500-sequestering-agent.html",
+   "destination": "/product.html?p=chemaquest-lp-500-sequestering-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemaquest-pnl-200-sequestering-agent.html",
+   "destination": "/product.html?p=chemaquest-pnl-200-sequestering-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemareduct-rdl-reduction-clearing-agent.html",
+   "destination": "/product.html?p=chemareduct-rdl-reduction-clearing-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemarust.html",
+   "destination": "/product.html?p=chemarust",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemascale-sq-200.html",
+   "destination": "/product.html?p=chemascale-sq-200",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemashine-star.html",
+   "destination": "/product.html?p=chemashine-star",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasil-600-micro-silicon.html",
+   "destination": "/product.html?p=chemasil-600-micro-silicon",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasil-bk-480-block-macro-silicon.html",
+   "destination": "/product.html?p=chemasil-bk-480-block-macro-silicon",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasil-bk-725-block-micro-silicon.html",
+   "destination": "/product.html?p=chemasil-bk-725-block-micro-silicon",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasil-hydro-446-conc-hydrophilic-silicon-agent.html",
+   "destination": "/product.html?p=chemasil-hydro-446-conc-hydrophilic-silicon-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasil-ice-330-ice-silicon-agent.html",
+   "destination": "/product.html?p=chemasil-ice-330-ice-silicon-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasil-mac-380-block-macro-silicon.html",
+   "destination": "/product.html?p=chemasil-mac-380-block-macro-silicon",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasil-mc-55-macro-silicon.html",
+   "destination": "/product.html?p=chemasil-mc-55-macro-silicon",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasilk-drf.html",
+   "destination": "/product.html?p=chemasilk-drf",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasilk-grz.html",
+   "destination": "/product.html?p=chemasilk-grz",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasilk-moist.html",
+   "destination": "/product.html?p=chemasilk-moist",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasilk-normal.html",
+   "destination": "/product.html?p=chemasilk-normal",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasilk-ultra.html",
+   "destination": "/product.html?p=chemasilk-ultra",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasint-cps.html",
+   "destination": "/product.html?p=chemasint-cps",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasinze-70.html",
+   "destination": "/product.html?p=chemasinze-70",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasinze-gt-conc.html",
+   "destination": "/product.html?p=chemasinze-gt-conc",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasoft-cst-raising-agent.html",
+   "destination": "/product.html?p=chemasoft-cst-raising-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasoft-mrd-soft-agent.html",
+   "destination": "/product.html?p=chemasoft-mrd-soft-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasol-ceto-7-in-1.html",
+   "destination": "/product.html?p=chemasol-ceto-7-in-1",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasol-hs-300.html",
+   "destination": "/product.html?p=chemasol-hs-300",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasol-hs-500.html",
+   "destination": "/product.html?p=chemasol-hs-500",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasoly-sr-conc-oil-remover-agent.html",
+   "destination": "/product.html?p=chemasoly-sr-conc-oil-remover-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemaspark-g.html",
+   "destination": "/product.html?p=chemaspark-g",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemastab-cif-n-peroxide-stabilizer.html",
+   "destination": "/product.html?p=chemastab-cif-n-peroxide-stabilizer",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemastate-xh-antistatic-agent.html",
+   "destination": "/product.html?p=chemastate-xh-antistatic-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemastate-zx-antistatic-agent.html",
+   "destination": "/product.html?p=chemastate-zx-antistatic-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemastrip.html",
+   "destination": "/product.html?p=chemastrip",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemasurf-3-in-1.html",
+   "destination": "/product.html?p=chemasurf-3-in-1",
+   "permanent": true
+  },
+  {
+   "source": "/product-chematol.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-chematril-wd-eco.html",
+   "destination": "/product.html?p=chematril-wd-eco",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemattol-4-in-1.html",
+   "destination": "/product.html?p=chemattol-4-in-1",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemattol.html",
+   "destination": "/product.html?p=chemattol",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemawash-r-conc-washing-agent-for-reactive-dye.html",
+   "destination": "/product.html?p=chemawash-r-conc-washing-agent-for-reactive-dye",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemawet-gbr-oil-remover-and-wetting-agent.html",
+   "destination": "/product.html?p=chemawet-gbr-oil-remover-and-wetting-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemawet-mrf-400-wetting-agent.html",
+   "destination": "/product.html?p=chemawet-mrf-400-wetting-agent",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemawood.html",
+   "destination": "/product.html?p=chemawood",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemazyme-ho-hydrogen-peroxide-killer-enzyme.html",
+   "destination": "/product.html?p=chemazyme-ho-hydrogen-peroxide-killer-enzyme",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemazyme-pl-antipilling-and-biopolish-enzyme.html",
+   "destination": "/product.html?p=chemazyme-pl-antipilling-and-biopolish-enzyme",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemol.html",
+   "destination": "/product.html?p=chemol",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemoline-all-in-1.html",
+   "destination": "/product.html?p=chemoline-all-in-1",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemoline-eco.html",
+   "destination": "/product.html?p=chemoline-eco",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemoline-foam.html",
+   "destination": "/product.html?p=chemoline-foam",
+   "permanent": true
+  },
+  {
+   "source": "/product-chemoxil-hyg.html",
+   "destination": "/product.html?p=chemoxil-hyg",
+   "permanent": true
+  },
+  {
+   "source": "/product-dyeing-1.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-dyeing-2.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-dyeing-3.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-dyeing-4.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-dyeing-5.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-dyeing-6.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-dyeing-7.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-dyeing-8.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-dyeing.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-finishing-1.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-finishing-2.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-finishing-3.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-finishing-4.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-finishing-5.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-finishing-6.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-finishing-7.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-finishing-8.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-finishing.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-pretreatment-1.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-pretreatment-2.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-pretreatment-3.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-pretreatment-4.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-pretreatment-5.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-pretreatment-6.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-pretreatment-7.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-pretreatment-8.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-pretreatment.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-printing-1.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-printing-2.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-printing-3.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-printing-4.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-printing-5.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-printing-6.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-printing-7.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-printing-8.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-printing.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-procare.html",
+   "destination": "/product.html?p=procare",
+   "permanent": true
+  },
+  {
+   "source": "/product-rm-1.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-rm-2.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-rm-3.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-rm-4.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-rm-5.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-rm-6.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-rm-7.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-rm-8.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-ro-1.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-ro-2.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/product-ro-3.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/sanitizers-hand-hygiene.html",
+   "destination": "/products.html?line=sani",
+   "permanent": true
+  },
+  {
+   "source": "/sanitizers-kitchen.html",
+   "destination": "/products.html?line=sani",
+   "permanent": true
+  },
+  {
+   "source": "/sanitizers-laundry.html",
+   "destination": "/products.html?line=sani",
+   "permanent": true
+  },
+  {
+   "source": "/sanitizers-room.html",
+   "destination": "/products.html?line=sani",
+   "permanent": true
+  },
+  {
+   "source": "/solutions.html",
+   "destination": "/products.html",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-acidic-reduction-agents.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-antifoaming-agents.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-antistatic-agents.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-buffering-agents.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-carrier-dispersing-agents.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-chelating-sequestering-agents.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-enzymes.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-fixing-agents.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-leveling-dispersing-agents.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing-washing-off-agents.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-dyeing.html",
+   "destination": "/textile.html#dyeing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing-amino-silicones.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing-antistatic-agents.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing-block-macro-silicones.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing-block-micro-silicones.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing-deep-silicones.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing-hydrophilic-silicones.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing-ice-silicones.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing-softeners.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing-water-repellent-waterproof-agents.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-finishing.html",
+   "destination": "/textile.html#finishing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-pretreatment-antifoaming-agents.html",
+   "destination": "/textile.html#pretreatment",
+   "permanent": true
+  },
+  {
+   "source": "/textile-pretreatment-buffering-agents.html",
+   "destination": "/textile.html#pretreatment",
+   "permanent": true
+  },
+  {
+   "source": "/textile-pretreatment-chelating-sequestering-agents.html",
+   "destination": "/textile.html#pretreatment",
+   "permanent": true
+  },
+  {
+   "source": "/textile-pretreatment-oil-removers.html",
+   "destination": "/textile.html#pretreatment",
+   "permanent": true
+  },
+  {
+   "source": "/textile-pretreatment-stabilizers.html",
+   "destination": "/textile.html#pretreatment",
+   "permanent": true
+  },
+  {
+   "source": "/textile-pretreatment-wetting-agents.html",
+   "destination": "/textile.html#pretreatment",
+   "permanent": true
+  },
+  {
+   "source": "/textile-pretreatment.html",
+   "destination": "/textile.html#pretreatment",
+   "permanent": true
+  },
+  {
+   "source": "/textile-printing-auxiliaries.html",
+   "destination": "/textile.html#printing",
+   "permanent": true
+  },
+  {
+   "source": "/textile-printing.html",
+   "destination": "/textile.html#printing",
+   "permanent": true
+  }
+ ],
+ "headers": [
+  {
+   "source": "/assets/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=31536000, immutable"
+    }
+   ]
+  }
+ ]
+}
