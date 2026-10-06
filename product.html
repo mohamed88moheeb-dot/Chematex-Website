@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <title>Product - Chematex</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css?v=20261006-r6">
 <link rel="icon" href="assets/img/chematex-lotus.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="48x48">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
 .tilt{width:56%;transition:transform .5s var(--ease);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg))}
 .tilt .pack{width:100%}
@@ -157,7 +156,7 @@ if (modes.length){
     calc();
   }
   function calc(){
-    const m = modes[mode], v = Math.max(0, +inEl.value || 0);
+    const m = modes[mode], cap = m.unit==='gl' ? 500000 : 100000, v = Math.min(cap, Math.max(0, +inEl.value || 0));
     const lo = m.unit==='gl' ? m.lo*v/1000 : m.lo/100*v, hi = m.unit==='gl' ? m.hi*v/1000 : m.hi/100*v;
     tween([lo,hi]);
     const per = m.unit==='gl' ? `a ${v.toLocaleString()} L bath` : `${v.toLocaleString()} kg of fabric`;
@@ -186,7 +185,7 @@ if (modes.length){
     const step = now => { const k = Math.min((now-t0)/450,1), e = 1-Math.pow(1-k,3); shown = [from[0]+(to[0]-from[0])*e, from[1]+(to[1]-from[1])*e]; out.textContent = range2(...shown); if (k<1) tween.raf = requestAnimationFrame(step); };
     tween.raf = requestAnimationFrame(step);
   }
-  inEl.addEventListener('input', ()=>{ range.value = inEl.value; calc(); });
+  inEl.addEventListener('input', ()=>{ const cap = modes[mode].unit==='gl' ? 500000 : 100000; if (+inEl.value > cap) inEl.value = cap; range.value = inEl.value; calc(); });
   range.addEventListener('input', ()=>{ inEl.value = range.value; calc(); });
   document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click', ()=>setMode(+b.dataset.mode)));
   setMode(0);
