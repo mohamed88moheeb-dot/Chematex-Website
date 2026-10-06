@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product - Chematex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=20261006-r6">
+<link rel="icon" href="assets/img/chematex-lotus.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+.tilt{width:56%;transition:transform .5s var(--ease);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg))}
+.tilt .pack{width:100%}
+@media (max-width:1024px){.tilt{width:48%}}
+/* bigger illustration so the label reads; the orbit rings run behind it */
+.tilt{width:64%}
+@media (max-width:1024px){.tilt{width:52%}}
+@media (max-width:760px){.tilt{width:60%}}
+</style>
+</head>
+<body data-page="product">
+<script src="assets/js/products.js"></script>
+<script src="assets/js/shots.js"></script>
+<script src="assets/js/groups.js"></script>
+<script src="assets/js/i18n.js?v=20261006-r6"></script>
+<script src="assets/js/site.js?v=20261006-r6"></script>
+
+<main id="main">
+  <section class="prod"><div class="wrap" id="prodRoot"></div></section>
+</main>
+<div id="cx-footer"></div>
+
+<script>
+(function(){
+const {P, LINES, STAGES, esc, title, fnText, url, icon, petal, pack, card, parseDosage, bySlug} = CX;
+const slug = new URLSearchParams(location.search).get('p');
+const p = bySlug(slug);
+const root = document.getElementById('prodRoot');
+
+if (!p){
+  root.innerHTML = `<div class="empty" style="margin-top:40px"><span class="label">Product not found</span><h3 style="margin-top:12px">We couldn't find that product.</h3><p>The link may be out of date. Search the catalogue or ask our team for the product you need.</p><a class="btn btn-primary" href="products.html">Open the catalogue ${icon('arrow')}</a></div>`;
+  return;
+}
+
+const L = LINES[p.line];
+document.title = CX.T('{name} - {fn} | Chematex', {name: p.name, fn: fnText(p)});
+const stageNames = p.stages.map(s=>STAGES.find(x=>x.id===s)?.name).filter(Boolean);
+const q = encodeURIComponent(p.name);
+const specs = [
+  p.group && ['Product group', p.group],
+  p.ionicity && ['Ionicity', p.ionicity],
+  p.appearance && ['Appearance', p.appearance],
+  p.use && ['Use case', p.use],
+  ['Packaging', p.pack],
+  stageNames.length ? ['Process stage', stageNames.join(' · ')] : ['Product line', L.short],
+  CX.groupsOf(p).length ? ['Group', [...new Set(CX.groupsOf(p).map(g=>g.sub ? g.name+' · '+g.sub.name : g.name))].join(' · ')] : null,
+].filter(Boolean);
+const modes = parseDosage(p.dosage);
+const lineList = P.filter(x=>x.line===p.line);
+const i = lineList.indexOf(p), prevP = lineList[(i-1+lineList.length)%lineList.length], nextP = lineList[(i+1)%lineList.length];
+const related = P.filter(x=>x!==p && x.line===p.line).sort((a,b)=>{
+  const sa = a.stages.some(s=>p.stages.includes(s)) ? 0 : 1, sb = b.stages.some(s=>p.stages.includes(s)) ? 0 : 1;
+  return sa - sb;
+}).slice(0,8);
+
+const shot = CX.SHOTS[p.slug];
+root.innerHTML = `
+<header class="prod-head" style="--c:${L.hex}">
+    <div class="crumbs" data-hero-reveal="fade"><a href="index.html">Home</a><span>/</span><a href="products.html">Catalogue</a><span>/</span><a href="products.html?line=${p.line}">${esc(L.short)}</a>${stageNames.length?`<span>/</span><a href="textile.html#${p.stages[0]}">${esc(stageNames.join(' · '))}</a>`:''}${(()=>{const g=CX.groupsOf(p)[0];return g?`<span>/</span><a href="${g.href.replace(/&/g,'&amp;')}">${esc(g.name)}</a>`+(g.sub?`<span>/</span><a href="${CX.groupHref(g.line,g,g.sub).replace(/&/g,'&amp;')}">${esc(g.sub.name)}</a>`:''):''})()}</div>
+    <h1 class="display" data-split data-split-now>${esc(p.name)}</h1>
+    <p class="fn" data-hero-reveal style="--d:.3s">${esc(fnText(p))}</p>
+</header>
+<div class="prod-grid" style="--c:${L.hex}">
+  <div class="prod-stage${shot?' show-photo':''}" id="stage" data-reveal="fade">
+    <span class="halo"></span><span class="halo h2"></span>
+    <span class="chip stage-tag" style="--c:${L.hex}">${petal(p.line)}${esc(L.short)}</span>
+    <div class="docs"><a class="doc-pill" href="contact.html?type=tds&amp;product=${q}&amp;line=${p.line}" aria-label="${esc(CX.T('Request TDS'))}">TDS</a><a class="doc-pill" href="contact.html?type=sds&amp;product=${q}&amp;line=${p.line}" aria-label="${esc(CX.T('Request SDS'))}">SDS</a></div>
+    <div class="tilt" id="tilt"><div class="pack" style="view-transition-name:pk-${p.slug}">${pack(p,'')}</div></div>
+    ${shot ? `<div class="shot-view" role="img" id="shotView" aria-label="${esc(CX.T('{name} in {size} packaging', {name: p.name, size: CX.packSize(shot.sizes[shot.sizes.length-1])}))}"><div class="sv-frame">${shot.sizes.map((z,k)=>`<i class="sv-cell${k===shot.sizes.length-1?' on':''}" style="background-image:url(${shot.src});background-size:${shot.sizes.length*100}% 100%;background-position:${shot.sizes.length>1?k/(shot.sizes.length-1)*100:0}% 0"></i>`).join('')}</div></div>
+    ${shot.sizes.length > 1 ? `<div class="size-pick" role="group" aria-label="${esc(CX.T('Pack size'))}">${shot.sizes.map((z,k)=>`<button type="button" data-size="${k}" aria-pressed="${k===shot.sizes.length-1}">${esc(CX.packSize(z))}</button>`).join('')}</div>` : `<div class="size-pick single"><span>${esc(CX.packSize(shot.sizes[0]))}</span></div>`}` : ''}
+  </div>
+  <div class="prod-info">
+    <p class="desc" data-hero-reveal style="--d:.5s">${esc(p.desc)}</p>
+    <dl class="specs" data-hero-reveal style="--d:.55s">
+      ${specs.map(([k,v],n)=>`<div${n===specs.length-1&&specs.length%2?' class="full"':''}><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}
+      ${p.dosage?`<div class="full dose"><dt>Typical dosage</dt><dd>${esc(p.dosage)}</dd></div>`:''}
+    </dl>
+    <div class="prod-actions" data-hero-reveal style="--d:.6s">
+      <a class="btn btn-primary btn-lg" data-magnetic href="contact.html?type=quote&amp;product=${q}&amp;line=${p.line}">Request a quote ${icon('arrow')}</a>
+      <a class="btn btn-doc btn-lg" href="contact.html?type=tds&amp;product=${q}&amp;line=${p.line}">${icon('doc')}Request TDS</a>
+      <a class="btn btn-doc btn-lg" href="contact.html?type=sds&amp;product=${q}&amp;line=${p.line}">${icon('doc')}Request SDS</a>
+    </div>
+    ${modes.length ? `
+    <section class="calc" id="calc" data-reveal aria-labelledby="calcTitle">
+      <div class="calc-head"><div><span class="label label-gold">Dosage calculator</span><h2 id="calcTitle" style="margin-top:6px">How much do you need?</h2></div>
+        ${modes.length>1?`<div class="calc-modes" role="group" aria-label="Application method">${modes.map((m,k)=>`<button type="button" data-mode="${k}" aria-pressed="${k===0}">${esc(m.label)}</button>`).join('')}</div>`:''}</div>
+      <div class="calc-body">
+        <div><label for="calcIn" id="calcLab"></label><div class="calc-input"><input id="calcIn" type="number" inputmode="decimal" min="1" step="1"><span id="calcUnit"></span></div>
+          <input type="range" id="calcRange" aria-label="Adjust quantity"></div>
+        <div class="calc-out" aria-live="polite"><b id="calcOut">-</b><p id="calcNote"></p></div>
+      </div>
+      <div class="calc-foot"><small>Based on the typical dosage in the technical data sheet. Final dosage depends on substrate, liquor ratio and machine.</small>
+        <a class="btn btn-gold btn-sm" id="calcQuote" href="#">Quote this quantity ${icon('arrow')}</a></div>
+    </section>` : ''}
+  </div>
+</div>
+${related.length ? `<section class="related"><div class="sec-head" style="margin-bottom:28px"><div><span class="label eyebrow" data-reveal>Related products</span><h2 class="display d-m" data-split>${esc(CX.T('More from {x}', {x: L.short.toLowerCase()}))}</h2></div><p data-reveal style="justify-self:end"><a class="link" href="products.html?line=${p.line}">View all ${icon('arrow')}</a></p></div>
+  <div class="rel-track" data-stagger=".06">${related.map(r=>card(r)).join('')}</div></section>` : ''}
+<nav class="prod-nav" aria-label="${esc(CX.T('Browse {x}', {x: L.short}))}">
+  <a href="${url(prevP)}"><small>← Previous</small><b>${esc(prevP.name)}</b></a>
+  <a href="${url(nextP)}"><small>Next →</small><b>${esc(nextP.name)}</b></a>
+</nav>`;
+
+/* The request buttons carry the pack size that is on screen, so the contact form opens with it chosen */
+let curSize = shot ? shot.sizes[shot.sizes.length-1] : '';
+const sizeQ = () => curSize ? '&size=' + encodeURIComponent(curSize) : '';
+const syncLinks = () => document.querySelectorAll('.prod-actions a, .docs a').forEach(a => { a.setAttribute('href', a.getAttribute('href').replace(/&size=[^&]*/, '') + sizeQ()); });
+syncLinks();
+
+/* Pack size picker: every size shares one canvas and floor line, so switching shows the true size difference */
+document.querySelectorAll('[data-size]').forEach(b=>b.addEventListener('click',()=>{
+  const k = +b.dataset.size, cells = document.querySelectorAll('.sv-cell');
+  curSize = shot.sizes[k]; syncLinks(); if (typeof calc === 'function' && modes.length) calc();
+  cells.forEach((c,i)=>c.classList.toggle('on', i===k));
+  document.querySelectorAll('[data-size]').forEach(x=>x.setAttribute('aria-pressed', x===b));
+  document.getElementById('shotView').setAttribute('aria-label', CX.T('{name} in {size} packaging', {name: p.name, size: CX.packSize(shot.sizes[k])}));
+}));
+
+/* Tilt the pack with the pointer */
+const stage = document.getElementById('stage'), tilt = document.getElementById('tilt');
+if (!CX.reduce) {
+  stage.addEventListener('pointermove', e=>{ const r = stage.getBoundingClientRect(); tilt.style.setProperty('--ry', ((e.clientX-r.left)/r.width-.5)*18+'deg'); tilt.style.setProperty('--rx', -((e.clientY-r.top)/r.height-.5)*10+'deg'); });
+  stage.addEventListener('pointerleave', ()=>{ tilt.style.setProperty('--ry','0deg'); tilt.style.setProperty('--rx','0deg'); });
+}
+
+/* Dosage calculator */
+if (modes.length){
+  const inEl = document.getElementById('calcIn'), range = document.getElementById('calcRange'), out = document.getElementById('calcOut'), note = document.getElementById('calcNote'), quote = document.getElementById('calcQuote');
+  const packs = (p.pack.match(/(\d+(?:\.\d+)?)\s*kg/gi)||[]).map(s=>parseFloat(s)).sort((a,b)=>a-b);
+  let mode = 0, shown = [0,0];
+  const cfg = m => m.unit==='gl' ? {lab:'Bath volume', unit:'L', def:1000, min:100, max:20000, step:100} : {lab:'Fabric weight', unit:'kg', def:500, min:50, max:5000, step:50};
+  const fmt = kg => kg < 1 ? `${Math.round(kg*1000)} g` : kg < 10 ? `${kg.toFixed(2)} kg` : `${kg.toFixed(1)} kg`;
+  const range2 = (a,b) => {
+    if (b < 1) return Math.round(a*1000)===Math.round(b*1000) ? `${Math.round(b*1000)} g` : `${Math.round(a*1000)}-${Math.round(b*1000)} g`;
+    const d = b < 10 ? 2 : 1;
+    return a.toFixed(d)===b.toFixed(d) ? `${b.toFixed(d)} kg` : `${a.toFixed(d)}-${b.toFixed(d)} kg`;
+  };
+  function setMode(k){
+    mode = k; const c = cfg(modes[k]);
+    document.getElementById('calcLab').textContent = c.lab;
+    document.getElementById('calcUnit').textContent = c.unit;
+    Object.assign(range, {min:c.min, max:c.max, step:c.step}); range.value = c.def; inEl.value = c.def;
+    document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed', +b.dataset.mode===k));
+    calc();
+  }
+  function calc(){
+    const m = modes[mode], v = Math.max(0, +inEl.value || 0);
+    const lo = m.unit==='gl' ? m.lo*v/1000 : m.lo/100*v, hi = m.unit==='gl' ? m.hi*v/1000 : m.hi/100*v;
+    tween([lo,hi]);
+    const per = m.unit==='gl' ? `a ${v.toLocaleString()} L bath` : `${v.toLocaleString()} kg of fabric`;
+    let extra = '';
+    if (packs.length && hi > 0){
+      if (hi < packs[0]) extra = ` One ${packs[0]} kg pack covers about ${Math.floor(packs[0]/hi)} batches this size.`;
+      else { const big = packs[packs.length-1]; extra = ` That's about ${Math.ceil(hi/big)} × ${big} kg ${Math.ceil(hi/big)>1?'packs':'pack'} per batch.`; }
+    }
+    if (CX.I18N.AR){
+      // «من CHEMACARRIER ECO لحمام حجمه 1,000 لتر بجرعة 1-3 جم/لتر. عبوة 50 كجم تكفي نحو 16 دفعة بهذا الحجم.»
+      const I = CX.I18N, n = I.iso(v.toLocaleString('en'));
+      const perA = m.unit==='gl' ? `لحمام حجمه ${n} لتر` : `لـ ${n} كجم من القماش`;
+      let extraA = '';
+      if (packs.length && hi > 0){
+        if (hi < packs[0]) extraA = ` عبوة ${I.iso(String(packs[0]))} كجم تكفي نحو ${I.batches(Math.floor(packs[0]/hi))} بهذا الحجم.`;
+        else { const big = packs[packs.length-1], k = Math.ceil(hi/big); extraA = ` أي نحو ${I.packsWord(k)} سعة ${I.iso(String(big))} كجم لكل دفعة.`; }
+      }
+      note.textContent = `من ${p.name} ${perA} بجرعة ${I.measure(m.raw.replace(/\s+/g,' '))}.${extraA}`;
+    } else note.textContent = `of ${p.name} for ${per} at ${m.raw.replace(/\s+/g,' ')}.${extra}`;
+    quote.href = `contact.html?type=quote&product=${q}&line=${p.line}${sizeQ()}&qty=${encodeURIComponent(fmt(hi)+' per batch ('+per+')')}`;
+  }
+  function tween(to){
+    if (CX.reduce){ shown = to; out.textContent = range2(...to); return; }
+    const from = shown.slice(), t0 = performance.now();
+    cancelAnimationFrame(tween.raf);
+    const step = now => { const k = Math.min((now-t0)/450,1), e = 1-Math.pow(1-k,3); shown = [from[0]+(to[0]-from[0])*e, from[1]+(to[1]-from[1])*e]; out.textContent = range2(...shown); if (k<1) tween.raf = requestAnimationFrame(step); };
+    tween.raf = requestAnimationFrame(step);
+  }
+  inEl.addEventListener('input', ()=>{ range.value = inEl.value; calc(); });
+  range.addEventListener('input', ()=>{ inEl.value = range.value; calc(); });
+  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click', ()=>setMode(+b.dataset.mode)));
+  setMode(0);
+}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product catalogue - Chematex</title>
+<meta name="description" content="Search and filter all Chematex products: textile auxiliaries, detergents and cleaners, personal care and sanitizers, with specifications and dosages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=20261006-r6">
+<link rel="icon" href="assets/img/chematex-lotus.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="products">
+<script src="assets/js/products.js"></script>
+<script src="assets/js/shots.js"></script>
+<script src="assets/js/groups.js"></script>
+<script src="assets/js/i18n.js?v=20261006-r6"></script>
+<script src="assets/js/site.js?v=20261006-r6"></script>
+
+<main id="main">
+  <section class="page-hero mist cat-hero">
+    <div class="wrap">
+      <div class="crumbs" data-hero-reveal="fade"><a href="index.html">Home</a><span>/</span><span>Product catalogue</span></div>
+      <div class="page-hero-grid">
+        <div>
+          <h1 class="display d-l" data-split data-split-now>Every product, with the spec you need.</h1>
+          <p class="lede" data-hero-reveal style="--d:.35s">Filter by product line or textile stage, or search by name, function and application. Each product opens a full specification sheet with a dosage calculator.</p>
+        </div>
+        <div data-hero-reveal style="--d:.5s">
+          <form class="search-box" role="search" id="catSearch">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+            <label class="sr-only" for="catQ">Search products</label>
+            <input id="catQ" name="q" type="search" placeholder="Search by name or function" autocomplete="off">
+            <kbd>/</kbd>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="filters" id="filters">
+    <div class="wrap">
+      <div class="filter-row" id="lineRow" role="group" aria-label="Product line"></div>
+      <div class="filter-row stage-row" id="stageRow" role="group" aria-label="Textile stage"></div>
+      <div class="filter-row stage-row" id="groupRow" role="group" aria-label="Product group"></div>
+      <div class="filter-row stage-row" id="subRow" role="group" aria-label="Product type"></div>
+    </div>
+  </div>
+
+  <section class="wrap" style="padding-bottom:var(--sec)">
+    <div class="result-bar"><p id="resultText" aria-live="polite"></p>
+      <label class="sr-only" for="sort">Sort products</label>
+      <select id="sort" class="fchip" style="appearance:auto;padding-right:10px"><option value="rec">Sort: by product line</option><option value="az">Sort: name A-Z</option></select>
+    </div>
+    <div class="grid-cards" id="grid"></div>
+  </section>
+
+  <section class="section-tight" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-band" data-reveal>
+        <div><span class="label eyebrow label-gold">Can't find it?</span><h2 class="display d-m" style="margin-top:14px">Describe the application and we'll recommend the product.</h2></div>
+        <div class="cta-actions"><a class="btn btn-gold btn-lg" href="contact.html" data-magnetic>Ask a specialist</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="cx-footer"></div>
+
+<script>
+(function(){
+const {P, LINES, STAGES, esc, petal, card, requestCard, search, countLine, inStage} = CX;
+const params = new URLSearchParams(location.search);
+const state = {line: LINES[params.get('line')] ? params.get('line') : 'all', stage: params.get('stage') || 'all', group: params.get('group') || 'all', sub: params.get('sub') || 'all', q: params.get('q') || '', sort: 'rec'};
+const groupRow = document.getElementById('groupRow'), subRow = document.getElementById('subRow');
+// Groups available for the current line (textile groups depend on the chosen stage)
+const lineGroups = () => state.line==='textile' ? (CX.GROUPS[state.stage]||[]) : (CX.LGROUPS[state.line]||[]);
+const grid = document.getElementById('grid'), lineRow = document.getElementById('lineRow'), stageRow = document.getElementById('stageRow');
+const qIn = document.getElementById('catQ'); qIn.value = state.q;
+
+lineRow.innerHTML = `<button class="fchip" data-line="all">All products</button>` +
+  Object.keys(LINES).map(k=>`<button class="fchip" data-line="${k}" style="--c:${LINES[k].hex}">${petal(k)}${esc(LINES[k].short)}${LINES[k].onRequest?' <small>On request</small>':''}</button>`).join('');
+stageRow.innerHTML = `<span class="label" style="margin-right:6px">Stage</span><button class="fchip stage" data-stage="all">All stages</button>` +
+  STAGES.map(s=>`<button class="fchip stage" data-stage="${s.id}">${s.num} ${s.name}${inStage(s.id).length?'':' <small>On request</small>'}</button>`).join('');
+
+function results(){
+  let list = state.q ? search(state.q) : P.slice();
+  if (state.line !== 'all') list = list.filter(p=>p.line===state.line);
+  if (state.line === 'textile' && state.stage !== 'all') list = list.filter(p=>p.stages.includes(state.stage));
+  const grp = lineGroups().find(g=>g.id===state.group);
+  const sub = grp && (grp.subgroups||[]).find(x=>x.id===state.sub);
+  if (grp) list = list.filter(p=>(sub||grp).products.includes(p.slug));
+  if (state.sort === 'az') list = list.slice().sort((a,b)=>a.name.localeCompare(b.name));
+  return list;
+}
+function render(){
+  lineRow.querySelectorAll('.fchip').forEach(b=>b.setAttribute('aria-pressed', b.dataset.line===state.line));
+  stageRow.classList.toggle('show', state.line==='textile');
+  stageRow.querySelectorAll('.fchip').forEach(b=>b.setAttribute('aria-pressed', b.dataset.stage===state.stage));
+  const gs = lineGroups();
+  groupRow.classList.toggle('show', gs.length>0);
+  groupRow.innerHTML = gs.length ? `<span class="label" style="margin-right:6px">Group</span><button class="fchip stage" data-group="all" aria-pressed="${state.group==='all'}">All groups</button>` + gs.map(g=>`<button class="fchip stage" data-group="${g.id}" aria-pressed="${state.group===g.id}">${esc(g.name)}</button>`).join('') : '';
+  const subs = (gs.find(g=>g.id===state.group)||{}).subgroups || [];
+  subRow.classList.toggle('show', subs.length>0);
+  subRow.innerHTML = subs.length ? `<span class="label" style="margin-right:6px">Type</span><button class="fchip stage" data-sub="all" aria-pressed="${state.sub==='all'}">All types</button>` + subs.map(g=>`<button class="fchip stage" data-sub="${g.id}" aria-pressed="${state.sub===g.id}">${esc(g.name)}</button>`).join('') : '';
+  const grp = gs.find(g=>g.id===state.group), sub = grp && (grp.subgroups||[]).find(x=>x.id===state.sub);
+  const list = results();
+  let html = list.map((p,i)=>card(p)).join('');
+  const onReq = LINES[state.line]?.onRequest;
+  if (onReq) html = requestCard(state.line) + requestCard(state.line, 'Tell us your specification');
+  if (state.line==='textile' && state.stage==='printing') html = requestCard('textile','Printing auxiliaries');
+  if (!html){
+    html = `<div class="empty"><h3>${esc(CX.T('No products match “{q}”.', {q: state.q}))}</h3><p>Try a function such as “softener” or “degreaser”, clear the filters, or ask our team directly.</p><button class="btn btn-primary" type="button" id="clearAll">Clear search and filters</button></div>`;
+  }
+  grid.innerHTML = html;
+  const scope = state.line==='all' ? 'all products' : LINES[state.line].short + (state.line==='textile'&&state.stage!=='all' ? ' · '+STAGES.find(x=>x.id===state.stage).name : '') + (grp ? ' · '+grp.name : '') + (sub ? ' · '+sub.name : '');
+  const scopeT = state.line==='all' ? CX.T('all products') : scope;
+  document.getElementById('resultText').innerHTML = onReq ? (CX.I18N.AR ? CX.T('{x} · available on request', {x: esc(LINES[state.line].name)}) : `${esc(LINES[state.line].name)} · <b>available on request</b>`)
+    : state.q ? (state.line!=='all' ? CX.T('Results for “{q}” in {x}', {q: esc(state.q), x: '<b>'+esc(scopeT)+'</b>'}) : CX.T('Results for “{q}”', {q: esc(state.q)}))
+    : CX.T('Showing {x}', {x: '<b>'+esc(scopeT)+'</b>'});
+  const clear = document.getElementById('clearAll');
+  if (clear) clear.addEventListener('click',()=>{ state.q=''; state.line='all'; state.stage='all'; state.group='all'; state.sub='all'; qIn.value=''; update(); });
+  // Entrance for visible cards
+  [...grid.children].forEach((c,i)=>{ c.style.animation = `vt-in .6s var(--ease) ${Math.min(i,12)*40}ms both`; });
+  const u = new URLSearchParams();
+  if (state.line!=='all') u.set('line',state.line);
+  if (state.line==='textile' && state.stage!=='all') u.set('stage',state.stage);
+  if (grp) u.set('group',state.group);
+  if (sub) u.set('sub',state.sub);
+  if (state.q) u.set('q',state.q);
+  history.replaceState(null,'', location.pathname + (u.toString()?'?'+u:''));
+}
+function update(){
+  if (document.startViewTransition && !CX.reduce){
+    grid.querySelectorAll('.pcard').forEach(c=>c.style.viewTransitionName = 'c-'+(c.dataset.slug||Math.random().toString(36).slice(2)));
+    const vt = document.startViewTransition(()=>{ render(); grid.querySelectorAll('.pcard').forEach(c=>{ c.style.animation='none'; if(c.dataset.slug) c.style.viewTransitionName='c-'+c.dataset.slug; }); });
+    vt.finished.finally(()=>grid.querySelectorAll('.pcard').forEach(c=>c.style.viewTransitionName=''));
+  } else render();
+}
+lineRow.addEventListener('click',e=>{ const b=e.target.closest('[data-line]'); if(!b) return; state.line=b.dataset.line; if(state.line!=='textile'){ state.stage='all'; } state.group='all'; state.sub='all'; update(); });
+stageRow.addEventListener('click',e=>{ const b=e.target.closest('[data-stage]'); if(!b) return; state.stage=b.dataset.stage; state.group='all'; update(); });
+groupRow.addEventListener('click',e=>{ const b=e.target.closest('[data-group]'); if(!b) return; state.group=b.dataset.group; state.sub='all'; update(); });
+subRow.addEventListener('click',e=>{ const b=e.target.closest('[data-sub]'); if(!b) return; state.sub=b.dataset.sub; update(); });
+let t; qIn.addEventListener('input',()=>{ clearTimeout(t); t=setTimeout(()=>{ state.q=qIn.value.trim(); update(); },140); });
+document.getElementById('catSearch').addEventListener('submit',e=>{ e.preventDefault(); state.q=qIn.value.trim(); update(); });
+document.getElementById('sort').addEventListener('change',e=>{ state.sort=e.target.value; update(); });
+document.addEventListener('keydown',e=>{ if(e.key==='/' && document.activeElement.tagName!=='INPUT'){ e.preventDefault(); qIn.focus(); }});
+render();
+})();
+</script>
+</body>
+</html>

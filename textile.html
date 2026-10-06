@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Textile auxiliaries - Chematex</title>
+<meta name="description" content="Chematex textile auxiliaries for pretreatment, dyeing, printing and finishing, with typical dosages and technical data sheets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=20261006-r6">
+<link rel="icon" href="assets/img/chematex-lotus.svg" type="image/svg+xml">
+<style>
+.tx-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:34px;font-family:var(--mono);font-size:13px;color:var(--muted-dark)}
+.tx-meta b{display:block;font-family:var(--display);font-stretch:112%;font-size:30px;color:var(--white);letter-spacing:-.02em;line-height:1.1}
+.tx-hero .stages{margin-top:18px}
+.tx-hero .stage-tab{cursor:pointer}
+.tx-sticky .zone{cursor:pointer}
+.tx-desc{color:var(--muted-dark);font-size:15px;margin-top:14px;max-width:44ch;min-height:4.8em;transition:opacity .25s}
+.tx-now .n,.tx-now h3{transition:opacity .25s,transform .35s var(--ease)}
+.tx-sticky.swap .n,.tx-sticky.swap h3,.tx-sticky.swap .tx-desc{opacity:0;transform:translateY(8px)}
+.chapter .ask{border-color:var(--line);background:var(--mist);margin-top:26px}
+.chapter .ask p{color:var(--muted)}
+.grp-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.grp-nav a{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px;border-radius:999px;border:1px solid var(--line);font-size:13.5px;font-weight:500;transition:all .2s}
+.grp-nav a:hover{border-color:var(--ink);background:var(--mist)}
+.grp-nav small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.grp{margin-top:30px}
+details.grp > summary{list-style:none;cursor:pointer}
+details.grp > summary::-webkit-details-marker{display:none}
+@media (min-width:761px){details.grp > summary{pointer-events:none}}
+@media (max-width:760px){
+  .grp-nav{display:none}
+  .grp{margin-top:0;border-bottom:1px solid var(--line)}
+  .grp h3{padding:14px 2px;font-size:17px}
+  .grp h3::after{content:"+";font-family:var(--mono);font-size:18px;color:var(--teal);transition:transform .3s var(--ease)}
+  details.grp[open] h3::after{transform:rotate(45deg)}
+  .grp .plist{border-top:0;margin-bottom:10px}
+  .chapter{padding:28px 0}
+  .chapter > p{font-size:15px}
+}
+.grp h3{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-family:var(--display);font-stretch:110%;font-weight:650;font-size:19px;color:var(--ink);padding-bottom:10px}
+.grp h3 small{font-family:var(--mono);font-size:11.5px;font-weight:400;color:var(--muted)}
+.grp .plist{margin-top:0}
+</style>
+</head>
+<body data-page="textile" data-hero="dark">
+<script src="assets/js/products.js"></script>
+<script src="assets/js/shots.js"></script>
+<script src="assets/js/groups.js"></script>
+<script src="assets/js/i18n.js?v=20261006-r6"></script>
+<script src="assets/js/site.js?v=20261006-r6"></script>
+
+<main id="main">
+  <section class="tx-hero">
+    <div class="wrap">
+      <div class="tx-crumbs crumbs" data-hero-reveal="fade"><a href="index.html">Home</a><span>/</span><span>Textile auxiliaries</span></div>
+      <div class="page-hero-grid">
+        <div>
+          <span class="label eyebrow label-gold" data-hero-reveal="fade">Where Chematex started</span>
+          <h1 class="display d-xl" data-split data-split-now style="margin-top:18px">Chemistry for every stage of wet processing.</h1>
+        </div>
+        <div>
+          <p class="lede" data-hero-reveal style="--d:.4s">Textile auxiliaries are the core of Chematex. We supply mills and dyehouses with pretreatment, dyeing, printing and finishing chemistry, backed by typical dosages and data sheets for every product.</p>
+        </div>
+      </div>
+      <div class="fabric" id="heroFabric" data-feed aria-hidden="true">
+        <div class="zone z-greige"></div><div class="zone z-pre"></div><div class="zone z-dye"></div><div class="zone z-print"></div><div class="zone z-finish"><span class="sheen"></span></div>
+      </div>
+      <nav class="stages" aria-label="Jump to a stage" id="heroStages"><div class="stage-in">Greige in</div></nav>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap tx-story">
+      <nav class="tx-bar" id="txBar" data-sticky-bar aria-label="Process stages"></nav>
+      <aside class="tx-sticky" id="txSticky" aria-hidden="true">
+        <span class="label label-gold">The line, stage by stage</span>
+        <div class="fabric" id="miniFabric" style="margin-top:22px">
+          <div class="zone z-greige"></div><div class="zone z-pre" data-i="0"></div><div class="zone z-dye" data-i="1"></div><div class="zone z-print" data-i="2"></div><div class="zone z-finish" data-i="3"><span class="sheen"></span></div>
+        </div>
+        <div class="tx-now"><span class="n" id="txNum">01</span><div><h3 id="txName">Pretreatment</h3><p id="txCnt"></p></div></div>
+        <p class="tx-desc" id="txDesc"></p>
+        <div class="tx-steps" id="txSteps"><i></i><i></i><i></i><i></i></div>
+      </aside>
+      <div id="chapters"></div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="label eyebrow label-gold" data-reveal>Working with mills</span><h2 class="display d-l" data-split>Support that goes beyond the drum.</h2></div>
+        <p data-reveal>Every auxiliary comes with the information your technical team needs to run it with confidence.</p>
+      </div>
+      <div class="support" data-stagger=".1">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M7 3v14a4 4 0 0 0 4 4h2a4 4 0 0 0 4-4V3M7 11h10"/></svg><h3>Samples for trials</h3><p>Request samples to run lab or bulk trials on your own substrate before you commit to an order.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 17l4-5"/></svg><h3>Dosage guidance</h3><p>Typical dosages for padding and exhaust on every product, with our team on hand to adjust them for your machine.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.5h8l4 4v15H6z"/><path d="M14 2.5v4h4M9 12h6M9 16h6"/></svg><h3>Technical documents</h3><p>Technical and safety data sheets for every auxiliary, sent on request with your quote.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band" data-reveal>
+        <div><span class="label eyebrow label-gold">For mills and dyehouses</span><h2 class="display d-l">Send us your recipe. We'll match the auxiliaries.</h2><p>Tell us the substrate, machine and the problem you're solving, and a Chematex specialist will recommend products and dosages.</p></div>
+        <div class="cta-actions"><a class="btn btn-gold btn-lg" href="contact.html?line=textile" data-magnetic>Start a request</a><a class="btn btn-ghost-light btn-lg" href="products.html?line=textile">Browse the range</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="cx-footer"></div>
+
+<script>
+(function(){
+const {STAGES, esc, fnText, url, icon, pack, inStage, P} = CX;
+
+/* Hero stage links */
+document.getElementById('heroStages').insertAdjacentHTML('beforeend', STAGES.map(s=>{const c=inStage(s.id).length;return `<a class="stage-tab" href="#${s.id}"><span class="num">${s.num}</span><span class="name"><span class="full">${s.name}</span><span class="short">${s.short}</span></span><span class="cnt">${c?'':'Range on request'}</span></a>`;}).join(''));
+const heroFabric = document.getElementById('heroFabric');
+new IntersectionObserver((es,o)=>{ if(es.some(e=>e.isIntersecting)){ heroFabric.classList.add('is-fed'); o.disconnect(); }},{threshold:.2}).observe(heroFabric.parentElement);
+
+/* Chapters */
+const dose = d => (d||'').split(';')[0].replace(/\s*\(o\.w\.f\.\)/,' o.w.f.');
+document.getElementById('chapters').innerHTML = STAGES.map((s,i)=>{
+  const list = inStage(s.id);
+  return `<article class="chapter" id="${s.id}" data-i="${i}">
+    <span class="label" data-reveal>${CX.T('Stage {n}', {n: s.num})}</span>
+    <h2 class="display d-l" data-split>${s.name}</h2>
+    <p data-reveal>${s.desc}</p>
+    ${s.ask ? `<div class="ask" data-reveal><p>Our printing auxiliaries are being added to the online catalogue. Tell us whether you print pigment, reactive or disperse, and on which fabric, and we'll send the matching products with their data sheets.</p><a class="btn btn-primary" href="contact.html?line=textile&amp;topic=printing">Ask about printing auxiliaries ${icon('arrow')}</a></div>`
+    : (()=>{ const gs = (CX.GROUPS[s.id]||[]); const row = p => `<li><a href="${url(p)}"><span class="mini">${CX.thumb(p)}</span><div><b>${esc(p.name)}</b><span>${esc(fnText(p))}</span></div></a></li>`;
+      return `<div class="grp-nav" data-reveal>${gs.map(g=>`<a href="#${s.id}--${g.id}">${esc(g.name)}</a>`).join('')}</div>` +
+        gs.map(g=>`<details class="grp" id="${s.id}--${g.id}" open><summary><h3>${esc(g.name)}</h3></summary><ul class="plist" data-stagger=".04">${g.products.map(sl=>CX.bySlug(sl)).filter(Boolean).map(row).join('')}</ul></details>`).join(''); })()}
+  </article>`;
+}).join('');
+
+/* Sticky panel follows the chapter in view */
+const barEl = document.getElementById('txBar');
+barEl.innerHTML = STAGES.map((s,i)=>`<button type="button" data-i="${i}"><i></i><small>${s.num}</small><b>${s.name}</b></button>`).join('');
+const bar = [...barEl.querySelectorAll('button')];
+const sticky = document.getElementById('txSticky'), zones = [...document.querySelectorAll('#miniFabric [data-i]')], steps = [...document.querySelectorAll('#txSteps i')];
+const fab = document.getElementById('miniFabric');
+let cur = -1;
+function setStage(i){
+  if (i === cur) return;
+  const first = cur === -1; cur = i;
+  const s = STAGES[i], n = inStage(s.id).length;
+  const apply = () => {
+    document.getElementById('txNum').textContent = s.num;
+    document.getElementById('txName').textContent = s.name;
+    document.getElementById('txCnt').textContent = n ? '' : 'Range on request';
+    document.getElementById('txDesc').textContent = s.desc;
+    sticky.classList.remove('swap');
+  };
+  zones.forEach((z,k)=>z.classList.toggle('is-active',k===i));
+  fab.classList.add('has-active');
+  steps.forEach((b,k)=>b.classList.toggle('on',k<=i));
+  bar.forEach((b,k)=>{ b.classList.toggle('is-on',k===i); b.classList.toggle('passed',k<=i); b.setAttribute('aria-current', k===i ? 'step' : 'false'); });
+  const on = bar[i]; if (on && barEl.scrollWidth > barEl.clientWidth) barEl.scrollTo({left: on.offsetLeft - 20, behavior: 'smooth'});
+  if (first) apply(); else { sticky.classList.add('swap'); setTimeout(apply, 220); }
+}
+setStage(0);
+const chapters = [...document.querySelectorAll('.chapter')];
+/* The active stage is the last chapter whose heading has passed the reading line (works for short and tall chapters alike) */
+let tick = false;
+const track = () => {
+  tick = false;
+  const line = Math.max(150, innerHeight * .32);
+  let k = 0; chapters.forEach((c,n)=>{ if (c.getBoundingClientRect().top <= line) k = n; });
+  setStage(k);
+};
+addEventListener('scroll', ()=>{ if (!tick){ tick = true; requestAnimationFrame(track); } }, {passive:true});
+addEventListener('resize', track);
+track();
+const goStage = k => CX.scrollToEl(chapters[k], true);
+zones.forEach((z,k)=>z.addEventListener('click',()=>goStage(k)));
+bar.forEach((b,k)=>b.addEventListener('click',()=>goStage(k)));
+// On phones the groups start folded so each stage reads as a short list of headings
+const phone = matchMedia('(max-width: 760px)').matches;
+if (phone) document.querySelectorAll('details.grp').forEach(d => d.open = false);
+})();
+</script>
+</body>
+</html>
