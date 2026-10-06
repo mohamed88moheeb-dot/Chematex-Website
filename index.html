@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <title>Chematex - Specialty chemicals made in Cairo</title>
 <meta name="description" content="Chematex formulates and manufactures textile auxiliaries, detergents, personal care, sanitizers, RO water treatment chemicals and raw materials in New Cairo, Egypt.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,8 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css?v=20261006-r6">
 <link rel="icon" href="assets/img/chematex-lotus.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="48x48">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body data-page="home" data-hero="dark" data-intro>
 <script src="assets/js/products.js"></script>
@@ -291,7 +290,7 @@ function renderStage(i){
   const left = `<div><span class="label label-gold">${CX.T('Stage {n}', {n: s.num})}</span><h3 class="display d-m" style="margin-top:12px">${s.name}</h3><p class="desc">${s.desc}</p>${s.ask?'':'<p class="note">Typical dosages from Chematex technical data sheets. The right dosage depends on substrate, liquor ratio and machine; our team confirms it for your process.</p>'}</div>`;
   const right = s.ask
     ? `<div class="ask"><p>Our printing auxiliaries are being added to the online catalogue. Tell us whether you print pigment, reactive or disperse, and on which fabric, and we'll send the matching products with their data sheets.</p><a class="btn btn-gold" href="contact.html?line=textile&amp;topic=printing">Ask about printing auxiliaries ${icon('arrow')}</a></div>`
-    : `<div><table class="ptable"><thead><tr><th>Product</th><th>Function</th><th>Typical dosage</th></tr></thead><tbody>${list.slice(0,6).map(p=>`<tr><td><a href="${url(p)}">${esc(p.name)}</a></td><td>${esc(fnText(p))}</td><td>${esc(doseShort(p.dosage))}</td></tr>`).join('')}</tbody></table><a class="link" href="textile.html#${s.id}" style="margin-top:22px">${CX.T('All {x} products', {x: s.name.toLowerCase()})} ${icon('arrow')}</a></div>`;
+    : `<div><table class="ptable"><thead><tr><th>Product</th><th>Function</th></tr></thead><tbody>${list.slice(0,6).map(p=>`<tr><td><a href="${url(p)}">${esc(p.name)}</a></td><td>${esc(fnText(p))}</td></tr>`).join('')}</tbody></table><a class="link" href="textile.html#${s.id}" style="margin-top:22px">${CX.T('All {x} products', {x: s.name.toLowerCase()})} ${icon('arrow')}</a></div>`;
   panel.innerHTML = left + right;
 }
 function select(i, focus){

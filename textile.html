@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <title>Textile auxiliaries - Chematex</title>
 <meta name="description" content="Chematex textile auxiliaries for pretreatment, dyeing, printing and finishing, with typical dosages and technical data sheets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,8 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css?v=20261006-r6">
 <link rel="icon" href="assets/img/chematex-lotus.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="48x48">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
 .tx-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:34px;font-family:var(--mono);font-size:13px;color:var(--muted-dark)}
 .tx-meta b{display:block;font-family:var(--display);font-stretch:112%;font-size:30px;color:var(--white);letter-spacing:-.02em;line-height:1.1}
@@ -132,7 +131,7 @@ document.getElementById('chapters').innerHTML = STAGES.map((s,i)=>{
     <h2 class="display d-l" data-split>${s.name}</h2>
     <p data-reveal>${s.desc}</p>
     ${s.ask ? `<div class="ask" data-reveal><p>Our printing auxiliaries are being added to the online catalogue. Tell us whether you print pigment, reactive or disperse, and on which fabric, and we'll send the matching products with their data sheets.</p><a class="btn btn-primary" href="contact.html?line=textile&amp;topic=printing">Ask about printing auxiliaries ${icon('arrow')}</a></div>`
-    : (()=>{ const gs = (CX.GROUPS[s.id]||[]); const row = p => `<li><a href="${url(p)}"><span class="mini">${CX.thumb(p)}</span><div><b>${esc(p.name)}</b><span>${esc(fnText(p))}</span></div><em>${esc(dose(p.dosage))}</em></a></li>`;
+    : (()=>{ const gs = (CX.GROUPS[s.id]||[]); const row = p => `<li><a href="${url(p)}"><span class="mini">${CX.thumb(p)}</span><div><b>${esc(p.name)}</b><span>${esc(fnText(p))}</span></div></a></li>`;
       return `<div class="grp-nav" data-reveal>${gs.map(g=>`<a href="#${s.id}--${g.id}">${esc(g.name)}</a>`).join('')}</div>` +
         gs.map(g=>`<details class="grp" id="${s.id}--${g.id}" open><summary><h3>${esc(g.name)}</h3></summary><ul class="plist" data-stagger=".04">${g.products.map(sl=>CX.bySlug(sl)).filter(Boolean).map(row).join('')}</ul></details>`).join(''); })()}
   </article>`;
